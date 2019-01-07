@@ -1,0 +1,11 @@
+1、从github下载qtmqtt源代码：https://github.com/emqtt/qmqtt
+2、解压文件，进入src目录使用qt打开里面的工程（.pro）
+3、编译运行工程，编译过程中如出现头文件出错，则需要根据实际文件路径进行修改
+4、编译后将会在工程所在的电脑磁盘根目录生成include 和 lib 文件夹
+5、将include文件夹复制到src\mqtt文件夹内
+6、新建空白的qt工程，将src内的mqtt文件夹和磁盘根目录的lib文件夹复制到新建工程内。
+7、在qt软件内右击工程名->点击添加现有文件->添加mqtt\include内的qmqttDepengd文件
+8、在qt软件内右击工程名->点击添加现有文件->添加mqtt内的qmqtt.h文件
+9、在qt软件内右击工程名->点击添加库->外部库->库文件：浏览->lib->libqmqtt.a
+10、在qt软件内右击工程名->点击添加库->外部库->库文件：浏览->lib->libqmqttd.a
+11、编译工程，如果没有出错则移植成功。
