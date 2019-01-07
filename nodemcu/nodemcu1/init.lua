@@ -92,17 +92,25 @@ tmr.start(wifi_temporary_timer)
 --timing control function
 function timing_control(data)
     timing_control_message = sjson.decode(data)
-    for k, v in pairs(timing_control_message) do 
-        print(k, v)
-    end
-    if (timing_control_message["timing1_state"] > 0) then
+    -- for k, v in pairs(timing_control_message) do 
+    --     print(k, v)
+    -- end
+    if (timing_control_message["timing1_state"] == 0) then
+        tmr.stop(timing_control_timer) 
+    elseif (timing_control_message["timing1_state"] > 0) then
         tmr.start(timing_control_timer) 
     end
 end
 
 timing_control_timer = tmr.create()
-tmr.register(timing_control_timer, 60*1000, tmr.ALARM_AUTO , function ()
-    print(timing_control_message["timing1_time"])
+tmr.register(timing_control_timer, 60*1000, tmr.ALARM_AUTO , function ()    
+    new_time = string.format("%02d:%02d",sys_time_hour,sys_time_min)..":00"--synthetic rtctime to compare
+    if (timing_control_message["timing1_time"] == new_time) then
+        gpio.write(led_B,timing_control_message["/room/led1/state"])
+        if (timing_control_message["timing1_state"] == 1) then
+            tmr.stop(timing_control_timer)
+        end
+    end
 end) 
 -----------------------------------------------------------------------------------------
 --mqtt connect seng and receive

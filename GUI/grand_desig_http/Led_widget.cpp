@@ -53,9 +53,9 @@ void Led_Widget::wigt1sataeschanged(int i)
 void Led_Widget::on_comboBox_timing1_currentIndexChanged(int index)
 {
     //获取定时时间内容并转换为json格式
-    json_timing1.insert("timing1_state",index);
-    json_timing1.insert("timing1_time",ui->timeEdit_timing1->time().toString());
-    json_timing1.insert("/room/led1/state",ui->comboBox_timing1_aim->currentText());
+    json_timing1.insert("timing1_state",index);//灯控制的频率
+    json_timing1.insert("timing1_time",ui->timeEdit_timing1->time().toString());//时间点设置
+    json_timing1.insert("/room/led1/state",ui->comboBox_timing1_aim->currentIndex());//灯的状态设置
     qDebug() <<json_timing1;
     post_data.clear();
     post_data.append(QString(QJsonDocument(json_timing1).toJson()));//将json格式转换为字符格式

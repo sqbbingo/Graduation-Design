@@ -34,12 +34,12 @@
    </property>
    <item>
     <property name="text">
-     <string>ON</string>
+     <string>OFF</string>
     </property>
    </item>
    <item>
     <property name="text">
-     <string>OFF</string>
+     <string>ON</string>
     </property>
    </item>
   </widget>
