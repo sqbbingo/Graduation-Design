@@ -57,4 +57,6 @@ void Led_Widget::on_comboBox_timing1_currentIndexChanged(int index)
     qDebug() << QString(QJsonDocument(json_timing1).toJson());
     request.setUrl(QUrl("http://api.heclouds.com/mqtt?topic=/room/led1/timing1"));
     manager->post(request,post_data);
+
+    qdbug() << "";
 }
