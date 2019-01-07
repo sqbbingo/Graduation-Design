@@ -34,15 +34,19 @@ void Led_Widget::wigt1sataeschanged(int i)
 {
     if(i == 1)//开灯
     {
+        post_data.clear();
         post_data.append("ON");
         request.setUrl(QUrl("http://api.heclouds.com/mqtt?topic=/room/led1/ON"));
         manager->post(request,post_data);
+        post_data.clear();
     }
     else if(i == 0)//关灯
     {
+        post_data.clear();
         post_data.append("OFF");
         request.setUrl(QUrl("http://api.heclouds.com/mqtt?topic=/room/led1/OFF"));
         manager->post(request,post_data);
+        post_data.clear();
     }
 }
 
@@ -58,6 +62,7 @@ void Led_Widget::on_comboBox_timing1_currentIndexChanged(int index)
     qDebug() << QString(QJsonDocument(json_timing1).toJson());
     request.setUrl(QUrl("http://api.heclouds.com/mqtt?topic=/room/led1/timing1"));//向onenet发送publish命令
     manager->post(request,post_data);//发送post请求，设置
+    post_data.clear();
     qDebug() << post_data;
 
 }

@@ -1,3 +1,5 @@
+dofile("time_get.lua")
+
 --led_of_state
 
 IO_BLINK = 8
@@ -86,9 +88,24 @@ tmr.register(wifi_temporary_timer,10000,0,function()
     tmr.unregister(wifi_temporary_timer)
 end)
 tmr.start(wifi_temporary_timer)
-
 -----------------------------------------------------------------------------------------
+--timing control function
+function timing_control(data)
+    timing_control_message = sjson.decode(data)
+    for k, v in pairs(timing_control_message) do 
+        print(k, v)
+    end
+    if (timing_control_message["timing1_state"] > 0) then
+        tmr.start(timing_control_timer) 
+    end
+end
 
+timing_control_timer = tmr.create()
+tmr.register(timing_control_timer, 60*1000, tmr.ALARM_AUTO , function ()
+    print(timing_control_message["timing1_time"])
+end) 
+-----------------------------------------------------------------------------------------
+--mqtt connect seng and receive
 wifi_led_pin = 5
 led_B = 0
 connect_mqttserver_state = 0
@@ -109,6 +126,8 @@ m1:on("message", function(client, topic, data)
         gpio.write(led_B,1)
     elseif string.find(topic,"/room/led1/OFF") then
         gpio.write(led_B,0)
+    elseif string.find(topic,"/room/led1/timing1") then --timing control
+        timing_control(data)
     elseif string.find(topic,"$creq") then
         if string.find(data,"ledR:") then
             local i = string.byte(data,string.find(data,"}")+1)-48
@@ -178,7 +197,7 @@ end
 function do_mqtt_connect()
     connect_mqttserver_state = 0
     blinking({2000, 2000})
-    print("connect to mqtt server again 168")
+    print("connect to mqtt server again 200")
     m1:connect("183.230.40.39", 6002,connect_success,handle_mqtt_error)
 end
 do_mqtt_connect()

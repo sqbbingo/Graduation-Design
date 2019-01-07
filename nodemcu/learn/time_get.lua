@@ -4,29 +4,33 @@ function isConnect()
         print(ip)
         return true
     else
-        print("without ip")
+        print("without ip:time_get_7")
         return false
     end
 end
 
 function refreshTime()
-    time = rtctime.epoch2cal(rtctime.get())
-    print(string.format("%04d/%02d/%02d %02d:%02d:%02d", 
+    sec,usec,rate = rtctime.get()
+    sys_time = rtctime.epoch2cal(sec+(8*60*60),usec,rate)
+    sys_time_hour = sys_time["hour"]
+    sys_time_min = sys_time["min"]
+--    print(sys_time_hour,sys_time_min)
+--[[    print(string.format("%04d/%02d/%02d %02d:%02d:%02d", 
                         time["year"], 
                         time["mon"], 
                         time["day"], 
-                        time["hour"] + 8, 
+                        time["hour"], 
                         time["min"], 
-                        time["sec"]))
+                        time["sec"]))--]]
 end
-
-tmr.alarm(0, 1000, tmr.ALARM_AUTO, function() 
+stime_timer = tmr.create()
+tmr.alarm(stime_timer, 1000, tmr.ALARM_AUTO, function() 
     if isConnect() == true then
-        tmr.stop(0)
-        sntp.sync("202.120.2.101", 
+        tmr.stop(stime_timer)
+        sntp.sync("120.24.166.46", 
             function()
                 print("sync succeeded")
-                tmr.alarm(0, 1000, tmr.ALARM_AUTO, refreshTime)
+                tmr.alarm(stime_timer, 1000, tmr.ALARM_AUTO, refreshTime)
             end,
             function(index)
                 print("failed : "..index)
