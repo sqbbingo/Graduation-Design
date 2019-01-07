@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Led_Widget</class>
+ <widget class="QWidget" name="Led_Widget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Led_Widget</string>
+  </property>
+  <widget class="QTimeEdit" name="timeEdit_timing1">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>240</y>
+     <width>151</width>
+     <height>41</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox_timing1_aim">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>240</y>
+     <width>91</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>ON</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>OFF</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QComboBox" name="comboBox_timing1">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>240</y>
+     <width>91</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>不启动</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>一次</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>每天</string>
+    </property>
+   </item>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
