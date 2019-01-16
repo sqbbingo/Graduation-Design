@@ -3,7 +3,7 @@
 
 # 一、引脚分配情况
 |index|PIN|#define|功能|
-|:--:|:--:||:--:|:--:|
+|:-:|:-:||:-:|:-:|
 |8|GIIO15|IO_BLINK|连接状态指示灯|
 |5|GPIO14|wifi_led_pin|wifi连接状态指示灯|
 |0|GPIO16|led_B|控制用led灯|
