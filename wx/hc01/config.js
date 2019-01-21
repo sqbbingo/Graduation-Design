@@ -10,6 +10,12 @@
         var authinfo = "nodemcumq";
         //根域名
         var url = "https://api.heclouds.com/";
+        //根域名+设备
+        var url_devic = url + 'devices/' + deviceid;
+        //上传数据点url
+        var url_send_data = url_devic + '/datapoints';
+        //发布消息
+        var url_send_mqttdata = url + 'mqtt?topic=';
         //请求的头部
         var header = {
                         'Content-Type': 'application/json',
@@ -23,7 +29,10 @@
                                 deviceid:deviceid,
                                 authinfo:authinfo,
                                 url:url,
-                                header:header
+                                header:header,
+                                url_devic:url_devic,
+                                url_send_data:url_send_data,
+                                url_send_mqttdata:url_send_mqttdata
                 }
         };
 })(module);

@@ -71,8 +71,9 @@
 /*led行中显示在状态*/
 .led-text {
         width: 60%;
-        height: 25rpx;
+        height: 80rpx;
         text-align: center;
+        /*padding: 20px;*/
 }
 
 /*switch的细节内容*/

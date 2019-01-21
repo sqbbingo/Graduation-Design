@@ -7,7 +7,7 @@
         <!-- led1 -->
         <view class="btnGroup">
                 <view class="led-imeag"><image src="/images/led_on.png"></image></view>
-                <view class="led-text">{{led1_state}}</view>
+                <navigator url="/pages/led_config/led_config" class="led-text" redirect><view class="led-text">{{led1_state}}</view></navigator>
                 <switch checked="{{ischecked1}}" bindchange="switch1Change"></switch>
                 <text> {{ var1 }} </text>                              
         </view>

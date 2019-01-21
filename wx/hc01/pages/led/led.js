@@ -2,7 +2,7 @@ var config = require('../../config.js');        //导入配置文件
 
 function sys_state_timer_calback(self)
 {
-        // console.log(self);
+        // console.log(config.config.header);
         //设备是否在线查询
         wx.request({
                                 url:'https://api.heclouds.com/devices' + '?online=true&amp',         //服务器地址
@@ -77,23 +77,9 @@ Page({
         //页面载入
         onLoad:function(options){
                 var self = this;
-                // console.log(self);
+                console.log("加载页面");
+                sys_state_timer_calback(self);
                 var sys_state_timer = setInterval(sys_state_timer_calback,10000,self); //每10秒查询一次设备的状态
-                wx.request({
-                                url:'https://api.heclouds.com/devices' + '?online=true&amp',         //服务器地址
-                                data: {},
-                                header: config.config.header,   //请求头部
-                                success: function(res) {        //调用成功后的回调函数
-                                        console.log(res);
-                                        if(res.data.data.devices.length > 0){
-                                                self.setData({
-                                                        online_state_imag:'/images/online.png',
-                                                        online_state_text:"在线"
-                                                })
-                                        }
-                                        
-                                }
-                        })
         },
         onReady:function(){
                 
@@ -121,52 +107,15 @@ var onenet_post = function(state){
         if (state) 
         {
                 state1 = "ON";
-                // this.setData({
-                //         ischecked1:true
-                // })
-        // }else{
-        //         this.setData({
-        //                 ischecked1:true
-        //         })
         }
         wx.request({
                         method:'POST',
                         url:'https://api.heclouds.com/mqtt?topic=/room/led1/' + state1,         //服务器地址
-                        data: {"state":state1
+                        data: {
+                                "state":state1
                         },
-                        header: {
-                                'Content-Type': 'application/json',
-                                "api-key": "Vt2rLag7l9LtcqUn7dT87psfxEY=",
-                                //"Host": "api.heclouds.com"
-                        },
+                        header: config.config.header,
                         success: function(res) {        //调用成功后的回调函数
-                                // console.log(res);
-                                // self.setData({
-                                //         // html:res.data.data.id   //更新HTML代码
-                                // })
                         }
                 })
 } 
-
-//向onenet发送get请求
-var onenet_get = function(){
-        // var self = this;
-        // wx.request({
-        //                 url:'https://api.heclouds.com/devices' + '?online=true&amp',         //服务器地址
-        //                 data: {
-        //                 },
-        //                 header: {
-        //                         'Content-Type': 'application/json',
-        //                         "api-key": "Vt2rLag7l9LtcqUn7dT87psfxEY=",
-        //                 },
-        //                 success: function(res) {        //调用成功后的回调函数
-        //                         // if(res.data.data.devices[0].online){
-                                        
-        //                         // }
-        //                         // self.setData({
-        //                         //                 online_state_imag:'/images/online.png',
-        //                         //                 online_state_text:"在线"
-        //                         //         })
-        //                 }
-        //         })
-}               

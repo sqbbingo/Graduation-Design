@@ -1,0 +1,25 @@
+<view>
+        <!-- 亮度调节 -->
+        <view class="container1">
+                <text>亮度调节</text>
+                <view>
+                        <slider bindchange="slider4change" min="0" max="100" show-value></slider>
+                </view>
+        </view>
+        <!-- 颜色调节 -->
+        <view class="container1">
+                <view class="color_now">
+                        <text>颜色调节：</text>
+                        <view class="view_style" style="background-color:rgb({{color_r}},{{color_g}},{{color_b}});"></view>
+                </view>
+                <view>
+                        <slider bindchange="sliderRchange" min="0" max="255" activeColor="red" show-value></slider>
+                        <slider bindchange="sliderGchange" min="0" max="255" activeColor="green" show-value></slider>
+                        <slider bindchange="sliderBchange" min="0" max="255" activeColor="blue" show-value></slider>
+                </view>
+        </view>
+        <!-- 定时调节 -->
+
+        <button bindtap="button_cancel">取消</button>
+        <button bindtap="button_ok" hover-class="custom-button-hover-class" formType="submit">确定</button>
+</view>
