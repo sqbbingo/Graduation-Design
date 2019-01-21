@@ -1,19 +1,20 @@
 <view>
-        <!-- 设备在线状态 -->
+        <!-- 设备在线状态显示 -->
         <view class="btnGroup"> 
                 <view class="led-imeag"><image src="{{online_state_imag}}"></image></view>
                 <text> {{online_state_text}} </text>
         </view>
+        <!-- led1 -->
         <view class="btnGroup">
                 <view class="led-imeag"><image src="/images/led_on.png"></image></view>
                 <view class="led-text">{{led1_state}}</view>
-                <switch checked bindchange="switch1Change"></switch>
+                <switch checked="{{ischecked1}}" bindchange="switch1Change"></switch>
                 <text> {{ var1 }} </text>                              
         </view>
         <view class="btnGroup">
                 <view class="led-imeag"><image src="/images/led_on.png"></image></view>
                 <view class="led-text">{{led2_state}}</view>
-                <switch checked bindchange="switch2Change"></switch>
+                <switch checked="{{ischecked2}}" bindchange="switch2Change"></switch>
                 <text> {{ var2 }} </text>             
         </view>
 </view>
