@@ -13,9 +13,9 @@
                         <view class="view_style" style="background-color:rgb({{color_r}},{{color_g}},{{color_b}});"></view>
                 </view>
                 <view>
-                        <slider bindchange="sliderRchange" min="0" max="255" activeColor="red" show-value></slider>
-                        <slider bindchange="sliderGchange" min="0" max="255" activeColor="green" show-value></slider>
-                        <slider bindchange="sliderBchange" min="0" max="255" activeColor="blue" show-value></slider>
+                        <slider bindchange="sliderRchange" min="0" max="255" activeColor="red" show-value value="{{color_r_value}}"></slider>
+                        <slider bindchange="sliderGchange" min="0" max="255" activeColor="green" show-value value="{{color_g_value}}"></slider>
+                        <slider bindchange="sliderBchange" min="0" max="255" activeColor="blue" show-value value="{{color_b_value}}"></slider>
                 </view>
         </view>
         <!-- 定时调节 -->

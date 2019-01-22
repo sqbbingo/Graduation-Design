@@ -113,6 +113,19 @@ tmr.register(timing_control_timer, 60*1000, tmr.ALARM_AUTO , function ()
     end
 end) 
 -----------------------------------------------------------------------------------------
+--rgb-conrol
+function rgb_control(data)
+    rgb_data = sjson.decode(data)
+    -- for k, v in pairs(t) do 
+    --     print(k, v)
+    -- end
+    ws_R = rgb_data.color_r
+    ws_G = rgb_data.color_g
+    ws_B = rgb_data.color_b
+    buffer:fill(rgb_data.color_g, rgb_data.color_r, rgb_data.color_b);
+    ws2812.write(buffer)
+end
+----------------------------------------------------------------------------------------
 --mqtt connect seng and receive
 wifi_led_pin = 5
 led_B = 0
@@ -136,6 +149,8 @@ m1:on("message", function(client, topic, data)
         gpio.write(led_B,0)
     elseif string.find(topic,"/room/led1/timing1") then --timing control
         timing_control(data)
+    elseif string.find(topic,"/room/ws2812/") then --rgb_led control form wx
+        rgb_control(data)
     elseif string.find(topic,"$creq") then
         if string.find(data,"ledR:") then
             local i = string.byte(data,string.find(data,"}")+1)-48
@@ -192,6 +207,18 @@ function connect_success(client)
         print("subscreibe /room/led1/OFF success:161")
     end)
     m1:subscribe("/room/led1/timing1",0,function()
+        print("subscreibe /room/led1/timing1 success:168")
+    end)
+    m1:subscribe("/room/ws2812/r",0,function()
+        print("subscreibe /room/led1/timing1 success:168")
+    end)
+    m1:subscribe("/room/ws2812/g",0,function()
+        print("subscreibe /room/led1/timing1 success:168")
+    end)
+    m1:subscribe("/room/ws2812/b",0,function()
+        print("subscreibe /room/led1/timing1 success:168")
+    end)
+    m1:subscribe("/room/ws2812/rgb",0,function()
         print("subscreibe /room/led1/timing1 success:168")
     end)
     blinking({2000, 200})
