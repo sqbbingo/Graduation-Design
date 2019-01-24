@@ -1,3 +1,5 @@
+@import "/lib/weui.wxss";
+
 .color_now{
         display: flex;
         flex-direction: row;
@@ -6,10 +8,36 @@
 
 .container1{
         border-bottom: 1px solid #eee;
+        margin: 15rpx;
+}
+
+.button_class{
+    margin: 20rpx;
 }
 
 .view_style{
         width: 100rpx;
         height: 50rpx;
-        border:2px solid;
+        border:1rpx solid;
+}
+
+.slider_class{
+    margin: 25rpx;
+}
+
+.picker{
+    padding: 2px;
+    background-color: #FFFFFF;
+}
+
+.timing_show{
+    display: flex;
+}
+
+.picker_class1{
+    width: 55%;
+}
+
+.picker_class2{
+    width: 45%;
 }

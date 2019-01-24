@@ -91,34 +91,92 @@ tmr.start(wifi_temporary_timer)
 -----------------------------------------------------------------------------------------
 --timing control function
 function timing_control(data)
-    timing_control_message = sjson.decode(data)
-    -- for k, v in pairs(timing_control_message) do 
+    tcm = data.tcm
+    -- for k, v in pairs(tcm) do 
     --     print(k, v)
     -- end
-    if (timing_control_message["timing1_state"] == 0) then
-        tmr.stop(timing_control_timer) 
-    elseif (timing_control_message["timing1_state"] > 0) then
-        tmr.start(timing_control_timer) 
+    if (timing_control_timer:state() ~= 1) then
+        tmr.start(timing_control_timer)
     end
+
 end
 
 timing_control_timer = tmr.create()
 tmr.register(timing_control_timer, 60*1000, tmr.ALARM_AUTO , function ()    
-    new_time = string.format("%02d:%02d",sys_time_hour,sys_time_min)..":00"--synthetic rtctime to compare
-    if (timing_control_message["timing1_time"] == new_time) then
-        gpio.write(led_B,timing_control_message["/room/led1/state"])
-        if (timing_control_message["timing1_state"] == 1) then
-            tmr.stop(timing_control_timer)
+    now_time = string.format("%02d:%02d",sys_time_hour,sys_time_min)    --synthetic rtctime to compare
+    -- print("timing_control_timer running")
+    --timing setting1
+    if (tcm.m0.time == now_time) then
+        print("tcm.mo.time is arrvie")
+        print(tcm.index[1])
+        if(tcm.index[1] == "1") then
+            gpio.write(led_B,0)
+            tcm.index[1] = 0
+        elseif(tcm.index[1] == "2") then
+            gpio.write(led_B,0)
+        elseif(tcm.index[1] == "3") then
+            print("open")
+            gpio.write(led_B,1)
+            tcm.index[1] = 0
+        elseif(tcm.index[1] == "4") then
+            gpio.write(led_B,1)
         end
     end
+    --timing setting2
+    if (tcm.m1.time == now_time) then
+        print("tcm.m1.time is arrvie")
+        if(tcm.index[2] == "1") then
+            gpio.write(led_B,0)
+            tcm.index[2] = 0
+        elseif(tcm.index[2] == "2") then
+            gpio.write(led_B,0)
+        elseif(tcm.index[2] == "3") then
+            gpio.write(led_B,1)
+            tcm.index[2] = 0
+        elseif(tcm.index[2] == "4") then
+            gpio.write(led_B,1)
+        end
+    end
+    --timing setting3
+    if (tcm.m2.time == now_time) then
+        print("tcm.m2.time is arrvie")
+        if(tcm.index[3] == "1") then
+            gpio.write(led_B,0)
+            tcm.index[3] = 0
+        elseif(tcm.index[3] == "2") then
+            gpio.write(led_B,0)
+        elseif(tcm.index[3] == "3") then
+            gpio.write(led_B,1)
+            tcm.index[3] = 0
+        elseif(tcm.index[3] == "4") then
+            gpio.write(led_B,1)
+        end
+    end
+    --timing setting4
+    if (tcm.m3.time == now_time) then
+        print("tcm.m3.time is arrvie")
+        if(tcm.index[4] == "1") then
+            gpio.write(led_B,0)
+            tcm.index[4] = 0
+        elseif(tcm.index[4] == "2") then
+            gpio.write(led_B,0)
+        elseif(tcm.index[4] == "3") then
+            gpio.write(led_B,1)
+            tcm.index[4] = 0
+        elseif(tcm.index[4] == "4") then
+            gpio.write(led_B,1)
+        end
+    end
+
 end) 
 -----------------------------------------------------------------------------------------
 --rgb-conrol
 function rgb_control(data)
     rgb_data = sjson.decode(data)
-    -- for k, v in pairs(t) do 
-    --     print(k, v)
-    -- end
+    timing_control(rgb_data)    --timing control function:92
+    for k, v in pairs(rgb_data) do 
+        print(k, v)
+    end
     ws_R = rgb_data.color_r
     ws_G = rgb_data.color_g
     ws_B = rgb_data.color_b
@@ -252,13 +310,19 @@ end
 upload_onenet_data = {}
 upload_onenet_data.ledR = 3
 upload_onenet_data.ledB = 0
+tcm = {}
+array = {"无操作","关闭一次","连续关闭","开启一次","连续开启"}
+tcm.array = array
 
+
+--update the sensor's message
 function upload_data()
     upload_onenet_data.ledR = gpio.read(wifi_led_pin)
     upload_onenet_data.ledB = gpio.read(led_B)
     upload_onenet_data.ws2812_R = ws_R
     upload_onenet_data.ws2812_G = ws_G
     upload_onenet_data.ws2812_B = ws_B
+    upload_onenet_data.tcm = tcm                    --updata the timing's message to onenet
     
     ok, json = pcall(sjson.encode, upload_onenet_data)
     if ok then
