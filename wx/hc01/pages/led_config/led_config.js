@@ -2,6 +2,7 @@ var config = require('../../config.js');        //导入配置文件
 
 Page({
         data:{
+                color_state:0,
                 color_r: 0,
                 color_r_value: 0,
                 color_g: 0,
@@ -39,32 +40,25 @@ Page({
                         method:'POST',
                         url:config.config.url_send_mqttdata +　'/room/ws2812/r',         //服务器地址
                         data: {                                 //请求参数
-                                 "color_r":self.data.color_r,
-                                 "color_g":self.data.color_g,
-                                 "color_b":self.data.color_b,
-                                 "tcm":self.data.tcm
-                                 // {
-                                 //    "index":self.data.tcm.index,
-                                 //    "m0":self.data.tcm.m0,
-                                 //    "m1":self.data.tcm.m1,
-                                 //    "m2":self.data.tcm.m2,
-                                 //    "m3":self.data.tcm.m3
-                                 // }
+                                "color_state":self.data.color_state,
+                                "color_r":self.data.color_r,
+                                "color_g":self.data.color_g,
+                                "color_b":self.data.color_b,
+                                "tcm":self.data.tcm
                         },
                         header: config.config.header,   //请求头部
                         success: function(res) {        //调用成功后的回调函数
                                 console.log(res);    
                         }
                 })
-
                 wx.navigateTo({
                         url: '/pages/led/led',
                 })              //跳转到led界面
         },
 
-        //取消按钮-直接跳转到主页
+        // 取消按钮-直接跳转到主页
         button_cancel(e) {
-                wx.navigateTo({
+                wx.navigateBack ({
                         url: '/pages/led/led',
                 })              //跳转到led界面
         },
@@ -105,6 +99,11 @@ Page({
 
                                 // 初始化灯光颜色-将滑块和颜色调节到实际情况
                                 for (var i = res.data.data.length - 1; i >= 0; i--) {
+                                        if (res.data.data[i].id =="ws2812_state") {
+                                                self.setData({
+                                                    color_state:res.data.data[i].current_value
+                                                })
+                                        }
                                         if(res.data.data[i].id == "ws2812_R"){  //红光
                                                 self.setData({
                                                         color_r:res.data.data[i].current_value,

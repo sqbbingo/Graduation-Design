@@ -110,67 +110,89 @@ tmr.register(timing_control_timer, 60*1000, tmr.ALARM_AUTO , function ()
         print("tcm.mo.time is arrvie")
         print(tcm.index[1])
         if(tcm.index[1] == "1") then
-            gpio.write(led_B,0)
+            buffer:fill(0,0,0)
+            ws2812.write(buffer)
             tcm.index[1] = 0
         elseif(tcm.index[1] == "2") then
-            gpio.write(led_B,0)
+            buffer:fill(0,0,0)
+            ws2812.write(buffer)
         elseif(tcm.index[1] == "3") then
             print("open")
-            gpio.write(led_B,1)
+            buffer:fill(rgb_data.color_g, rgb_data.color_r, rgb_data.color_b);
+            ws2812.write(buffer)
             tcm.index[1] = 0
         elseif(tcm.index[1] == "4") then
-            gpio.write(led_B,1)
+            buffer:fill(rgb_data.color_g, rgb_data.color_r, rgb_data.color_b);
+            ws2812.write(buffer)
         end
     end
     --timing setting2
     if (tcm.m1.time == now_time) then
         print("tcm.m1.time is arrvie")
         if(tcm.index[2] == "1") then
-            gpio.write(led_B,0)
+            buffer:fill(0,0,0)
+            ws2812.write(buffer)
             tcm.index[2] = 0
         elseif(tcm.index[2] == "2") then
-            gpio.write(led_B,0)
+            buffer:fill(0,0,0)
+            ws2812.write(buffer)
         elseif(tcm.index[2] == "3") then
-            gpio.write(led_B,1)
+            buffer:fill(rgb_data.color_g, rgb_data.color_r, rgb_data.color_b);
+            ws2812.write(buffer)
             tcm.index[2] = 0
         elseif(tcm.index[2] == "4") then
-            gpio.write(led_B,1)
+            buffer:fill(rgb_data.color_g, rgb_data.color_r, rgb_data.color_b);
+            ws2812.write(buffer)
         end
     end
     --timing setting3
     if (tcm.m2.time == now_time) then
         print("tcm.m2.time is arrvie")
         if(tcm.index[3] == "1") then
-            gpio.write(led_B,0)
+            buffer:fill(0,0,0)
+            ws2812.write(buffer)
             tcm.index[3] = 0
         elseif(tcm.index[3] == "2") then
-            gpio.write(led_B,0)
+            buffer:fill(0,0,0)
+            ws2812.write(buffer)
         elseif(tcm.index[3] == "3") then
-            gpio.write(led_B,1)
+            buffer:fill(rgb_data.color_g, rgb_data.color_r, rgb_data.color_b);
+            ws2812.write(buffer)
             tcm.index[3] = 0
         elseif(tcm.index[3] == "4") then
-            gpio.write(led_B,1)
+            buffer:fill(rgb_data.color_g, rgb_data.color_r, rgb_data.color_b);
+            ws2812.write(buffer)
         end
     end
     --timing setting4
     if (tcm.m3.time == now_time) then
         print("tcm.m3.time is arrvie")
         if(tcm.index[4] == "1") then
-            gpio.write(led_B,0)
+            buffer:fill(0,0,0)
+            ws2812.write(buffer)
             tcm.index[4] = 0
         elseif(tcm.index[4] == "2") then
-            gpio.write(led_B,0)
+            buffer:fill(0,0,0)
+            ws2812.write(buffer)
         elseif(tcm.index[4] == "3") then
-            gpio.write(led_B,1)
+            buffer:fill(rgb_data.color_g, rgb_data.color_r, rgb_data.color_b);
+            ws2812.write(buffer)
             tcm.index[4] = 0
         elseif(tcm.index[4] == "4") then
-            gpio.write(led_B,1)
+            buffer:fill(rgb_data.color_g, rgb_data.color_r, rgb_data.color_b);
+            ws2812.write(buffer)
         end
     end
 
 end) 
 -----------------------------------------------------------------------------------------
 --rgb-conrol
+rgb_data = {}
+rgb_data.color_state = 0
+rgb_data.color_r = 0
+rgb_data.color_g = 0
+rgb_data.color_b = 0
+
 function rgb_control(data)
     rgb_data = sjson.decode(data)
     timing_control(rgb_data)    --timing control function:92
@@ -180,7 +202,13 @@ function rgb_control(data)
     ws_R = rgb_data.color_r
     ws_G = rgb_data.color_g
     ws_B = rgb_data.color_b
-    buffer:fill(rgb_data.color_g, rgb_data.color_r, rgb_data.color_b);
+    if(rgb_data.color_state == "1") then
+        print("1:190")
+        buffer:fill(rgb_data.color_g, rgb_data.color_r, rgb_data.color_b)
+    else
+        print("0:193")
+        buffer:fill(0,0,0)
+    end
     ws2812.write(buffer)
 end
 ----------------------------------------------------------------------------------------
@@ -202,9 +230,13 @@ end)
 m1:on("message", function(client, topic, data)
     print(topic .. ": " .. data)
     if string.find(topic,"/room/led1/ON") then
-        gpio.write(led_B,1)
+        rgb_data.color_state = "1"
+        buffer:fill(rgb_data.color_g, rgb_data.color_r, rgb_data.color_b);
+        ws2812.write(buffer)
     elseif string.find(topic,"/room/led1/OFF") then
-        gpio.write(led_B,0)
+        rgb_data.color_state = "0"
+        buffer:fill(0,0,0)
+        ws2812.write(buffer)
     elseif string.find(topic,"/room/led1/timing1") then --timing control
         timing_control(data)
     elseif string.find(topic,"/room/ws2812/") then --rgb_led control form wx
@@ -319,6 +351,7 @@ tcm.array = array
 function upload_data()
     upload_onenet_data.ledR = gpio.read(wifi_led_pin)
     upload_onenet_data.ledB = gpio.read(led_B)
+    upload_onenet_data.ws2812_state = rgb_data.color_state
     upload_onenet_data.ws2812_R = ws_R
     upload_onenet_data.ws2812_G = ws_G
     upload_onenet_data.ws2812_B = ws_B

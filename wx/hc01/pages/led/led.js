@@ -30,8 +30,8 @@ function sys_state_timer_calback(self)
                 data:{},
                 header: config.config.header,   //请求头部
                 success: function(res) {        //调用成功后的回调函数
-                        // console.log(res.data.data[0].current_value);
-                        if (res.data.data[0].current_value) {
+                        console.log(res);
+                        if (res.data.data[6].current_value == "1") {
                                 self.setData({
                                         ischecked1:true
                                 })
@@ -67,7 +67,7 @@ Page({
                         ischecked1:e.detail.value?true:false
                 })
         },
-        // 按钮1状态改变
+        // 按钮2状态改变
         switch2Change: function(e){
                 console.log('switch2 发生 change 事件，携带值为',e.detail.value)
                 this.setData({

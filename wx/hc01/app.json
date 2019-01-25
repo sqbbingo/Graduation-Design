@@ -1,8 +1,8 @@
 {
   "pages":[
-    "pages/led_config/led_config",
-    "pages/led/led",
     
+    "pages/led/led",
+    "pages/led_config/led_config",
     "pages/index/index",
     "pages/logs/logs"
   ],
