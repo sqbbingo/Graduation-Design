@@ -6,14 +6,14 @@
         </view>
         <!-- led1 -->
         <view class="btnGroup">
-                <view class="led-imeag"><image src="/images/led_on.png"></image></view>
+                <view class="led-imeag"><image src="/images/color_led.png"></image></view>
                 <navigator url="/pages/led_config/led_config" class="led-text" redirect><view class="led-text">{{led1_state}}</view></navigator>
                 <switch checked="{{ischecked1}}" bindchange="switch1Change"></switch>
                 <text> {{ var1 }} </text>                              
         </view>
         <view class="btnGroup">
                 <view class="led-imeag"><image src="/images/led_on.png"></image></view>
-                <view class="led-text">{{led2_state}}</view>
+                <navigator url="/pages/led2_config/led2_config" class="led-text" redirect><view class="led-text">{{led2_state}}</view></navigator>
                 <switch checked="{{ischecked2}}" bindchange="switch2Change"></switch>
                 <text> {{ var2 }} </text>             
         </view>

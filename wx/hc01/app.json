@@ -3,6 +3,7 @@
     
     "pages/led/led",
     "pages/led_config/led_config",
+    "pages/led2_config/led2_config",
     "pages/index/index",
     "pages/logs/logs"
   ],

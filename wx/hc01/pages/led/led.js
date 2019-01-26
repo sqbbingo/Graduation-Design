@@ -30,7 +30,10 @@ function sys_state_timer_calback(self)
                 data:{},
                 header: config.config.header,   //请求头部
                 success: function(res) {        //调用成功后的回调函数
-                        console.log(res);
+                        console.log(res);   
+                        self.setData({
+                                led2_data:res.data.data[7].current_value
+                        })
                         if (res.data.data[6].current_value == "1") {
                                 self.setData({
                                         ischecked1:true
@@ -40,7 +43,15 @@ function sys_state_timer_calback(self)
                                         ischecked1:false
                                 })
                         }
-                        
+                        if (res.data.data[7].current_value.state == "1") {  //led2 switch 状态更新
+                                self.setData({
+                                        ischecked2:true
+                                })
+                        }else{
+                                self.setData({
+                                        ischecked2:false
+                                })
+                        }    
                 }
         })
 }
@@ -49,13 +60,14 @@ Page({
         data:{
                 var1:"开",
                 ischecked1:false,
-                led1_state:"大厅",
+                led1_state:"大厅全彩灯",
 
                 var2:"关",
                 ischecked2:false,
-                led2_state:"厨房",
+                led2_state:"大厅普通灯",
                 online_state_imag:'/images/offline.png',
-                online_state_text:"离线"
+                online_state_text:"离线",
+                led2_data:" "
         },
         // 按钮1状态改变
         switch1Change: function(e){
@@ -69,9 +81,24 @@ Page({
         },
         // 按钮2状态改变
         switch2Change: function(e){
+                var self = this;
                 console.log('switch2 发生 change 事件，携带值为',e.detail.value)
                 this.setData({
-                        var2:e.detail.value?"开":"关"
+                        var2:e.detail.value?"开":"关",
+                        ischecked2:e.detail.value?true:false,
+                        'led2_data.state':e.detail.value?1:0
+                })
+
+                wx.request({
+                        method:'POST',
+                        url:config.config.url_send_mqttdata +　'/room/led2',         //服务器地址
+                        data: {                                 //请求参数
+                                "led2":self.data.led2_data
+                        },
+                        header: config.config.header,   //请求头部
+                        success: function(res) {        //调用成功后的回调函数
+                                console.log(res);    
+                        }
                 })
         },
         //页面载入

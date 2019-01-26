@@ -58,7 +58,7 @@ Page({
 
         // 取消按钮-直接跳转到主页
         button_cancel(e) {
-                wx.navigateBack ({
+                wx.navigateTo ({
                         url: '/pages/led/led',
                 })              //跳转到led界面
         },

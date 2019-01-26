@@ -1,4 +1,9 @@
-dofile("time_get.lua")
+-- dofile("led2_control.lua")
+
+file.open("message.json","r")
+messagej = file.read()
+file.close()
+message = sjson.decode(messagej)
 
 --led_of_state
 
@@ -64,6 +69,7 @@ function connect_succes()
     tmr.start(wificonnect_timer)
     blinking({2000, 100})
     enduser_setup.stop()
+    dofile("led2_control.lua")
 end
 
 enduser_setup.manual(true)
@@ -212,6 +218,8 @@ function rgb_control(data)
     ws2812.write(buffer)
 end
 ----------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------
 --mqtt connect seng and receive
 wifi_led_pin = 5
 led_B = 0
@@ -241,6 +249,8 @@ m1:on("message", function(client, topic, data)
         timing_control(data)
     elseif string.find(topic,"/room/ws2812/") then --rgb_led control form wx
         rgb_control(data)
+    elseif string.find(topic,"/room/led2") then --/room/led2 control form wx
+        led2_control(data)
     elseif string.find(topic,"$creq") then
         if string.find(data,"ledR:") then
             local i = string.byte(data,string.find(data,"}")+1)-48
@@ -287,30 +297,22 @@ end)
 function connect_success(client)
     tmr.start(mqtt_connect_state)   --start the alarm to check mqtt connect state,when connect to mqtt server success
     m1:publish("node_mm", "online", 0, 0)
-    m1:subscribe("pc_mm", 0, function(client) 
-        print("subscribe success: 155")
-    end)
     m1:subscribe("/room/led1/ON",0,function()
-        print("subscreibe /room/led1/ON success:158")
+        print("subscreibe /room/led1/ON success:294")
     end)
     m1:subscribe("/room/led1/OFF",0,function()
-        print("subscreibe /room/led1/OFF success:161")
+        print("subscreibe /room/led1/OFF success:297")
     end)
     m1:subscribe("/room/led1/timing1",0,function()
-        print("subscreibe /room/led1/timing1 success:168")
+        print("subscreibe /room/led1/timing1 success:300")
     end)
     m1:subscribe("/room/ws2812/r",0,function()
-        print("subscreibe /room/led1/timing1 success:168")
+        print("subscreibe /room/ws2812/r success:303")
     end)
-    m1:subscribe("/room/ws2812/g",0,function()
-        print("subscreibe /room/led1/timing1 success:168")
+    m1:subscribe("/room/led2",0,function()
+        print("subscreibe /room/led2 success:306")
     end)
-    m1:subscribe("/room/ws2812/b",0,function()
-        print("subscreibe /room/led1/timing1 success:168")
-    end)
-    m1:subscribe("/room/ws2812/rgb",0,function()
-        print("subscreibe /room/led1/timing1 success:168")
-    end)
+    dofile("time_get.lua")
     blinking({2000, 200})
     connect_mqttserver_state = 1
 end
@@ -356,11 +358,15 @@ function upload_data()
     upload_onenet_data.ws2812_G = ws_G
     upload_onenet_data.ws2812_B = ws_B
     upload_onenet_data.tcm = tcm                    --updata the timing's message to onenet
+    upload_onenet_data.led2 = message.led2
     
     ok, json = pcall(sjson.encode, upload_onenet_data)
     if ok then
         --print("ip187:",wifi.sta.getip())
         --print("connect_mqttserver_state188:",connect_mqttserver_state)
+        file.open("message.json","w")       --update message.json's message
+        file.write(json)
+        file.close()
         m1:publish("$dp",onenetstr(json), 0, 0)
     else
         print("failed to encode json!")
