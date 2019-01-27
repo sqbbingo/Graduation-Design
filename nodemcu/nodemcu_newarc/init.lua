@@ -3,3 +3,4 @@ dofile("sysLed.lua")    --<sysLedStart()>,<sysLedStop()>,<sysFlashingTime(time)>
 dofile("wifi_connec.lua")   --make connect state var <<connect_state>>,monitoring wifi state and connect angin
 dofile("mqtt_connect.lua")    --connect to mqtt breaker
 dofile("ws2812Control.lua") --<ws2812_control(data)>
+dofile("led2_control.lua")  --<led2_control(data)>

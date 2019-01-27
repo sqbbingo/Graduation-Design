@@ -28,6 +28,7 @@ function ws2812_control(data)
     else
         ws2812OFF()
     end
+    print(message.ws2812.rgb[1])
     upload_data()   --update the message after receive theme
 end
 
@@ -107,6 +108,7 @@ tmr.register(timing_control_timer, 60*1000, tmr.ALARM_AUTO , function ()
         end
     upload_data()   --update the message after receive theme
     end
+    led2TimingTimer()   --led2 timing  control form led2_control.lua
 end) 
 
 tmr.start(timing_control_timer)

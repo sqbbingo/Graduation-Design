@@ -13,7 +13,7 @@
         "apiKey":"Vt2rLag7l9LtcqUn7dT87psfxEY=",
         "deviceId":"516161018",
         "authInfo":"bs01",
-        "subscribe":["sysLed","/room1/ws2812","/room1/led1"]
+        "subscribe":["sysLed","/room1/ws2812","/room1/led2"]
     },
     "ws2812":{
         "state":0,

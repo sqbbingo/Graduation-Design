@@ -2,8 +2,8 @@ mq1:on("message", function(client, topic, data)
     print(topic .. ": " .. data)
     if string.find(topic,"/room1/ws2812") then --rgb_led control form wx
         ws2812_control(data)
-    elseif string.find(topic,"/room1/led1") then --/room1/led1 control form wx
-        led1_control(data)
+    elseif string.find(topic,"/room1/led2") then --/room1/led1 control form wx
+        led2_control(data)
     elseif string.find(topic,"$creq") then
         if string.find(data,"ledR:") then
             local i = string.byte(data,string.find(data,"}")+1)-48
