@@ -2,33 +2,36 @@ var config = require('../../config.js');        //导入配置文件
 
 Page({
         data:{
-                color_state:0,
-                color_r: 0,
-                color_r_value: 0,
-                color_g: 0,
-                color_g_value: 0,
-                color_b: 0,
-                color_b_value: 0,
-                select: false,
-                tcm:{    //定时开关信息
-                        array: ['无操作','关闭一次','连续关闭', '开启一次', '连续开启'],
-                        index:[0,0,0,0,0],
-                        m0:{
-                                state:"ON",
-                                time:"00:00"
+                array: ['无操作','关闭一次','连续关闭', '开启一次', '连续开启'],
+                message:{
+                        wifi:{
+                            ssid:["wf","nodemcu"],
+                            pwd:["su666688886","12345678"]
                         },
-                        m1:{
-                                state:"ON",
-                                time:"00:00"
+                        sysLed:{
+                            state:1,
+                            time:500,
+                            brightness:50
                         },
-                        m2:{
-                                state:"ON",
-                                time:"00:00"
+                        mqtt:{
+                            productId:"194413",
+                            apiKey:"Vt2rLag7l9LtcqUn7dT87psfxEY=",
+                            deviceId:"516161018",
+                            authInfo:"bs01",
+                            subscribe:["sysLed","/room1/ws2812","/room1/led1"]
                         },
-                        m3:{
-                                state:"ON",
-                                time:"00:00"
+                        ws2812:{
+                            state:0,
+                            rgb:[10,10,10],
+                            index:[0,0,0,0,0],
+                            time:["00:00","00:00","00:00","00:00","00:00"]
                         },
+                        led2:{
+                            state:0,
+                            brightness:0,
+                            index:[0,0,0,0,0],
+                            time:["00:00","00:00","00:00","00:00","00:00"]
+                        }   
                 }
         },
 
@@ -36,21 +39,7 @@ Page({
         button_ok(e) {
                 var self = this;
                 
-                wx.request({
-                        method:'POST',
-                        url:config.config.url_send_mqttdata +　'/room/ws2812/r',         //服务器地址
-                        data: {                                 //请求参数
-                                "color_state":self.data.color_state,
-                                "color_r":self.data.color_r,
-                                "color_g":self.data.color_g,
-                                "color_b":self.data.color_b,
-                                "tcm":self.data.tcm
-                        },
-                        header: config.config.header,   //请求头部
-                        success: function(res) {        //调用成功后的回调函数
-                                console.log(res);    
-                        }
-                })
+                config.config.PublishTheme("/room1/ws2812",self.data.message.ws2812);
                 wx.navigateTo({
                         url: '/pages/led/led',
                 })              //跳转到led界面
@@ -67,21 +56,21 @@ Page({
         sliderRchange(e) {
                 console.log(e);
                 this.setData({
-                        color_r:e.detail.value
+                        'message.ws2812.rgb[0]':e.detail.value
                 })
         },
-        // 改变RGB-B的值
+        // 改变RGB-G的值
         sliderGchange(e) {
                 console.log(e);
                 this.setData({
-                        color_g:e.detail.value
+                        'message.ws2812.rgb[1]':e.detail.value
                 })
         },
         // 改变RGB-B的值
         sliderBchange(e) {
                 console.log(e);
                 this.setData({
-                        color_b:e.detail.value
+                        'message.ws2812.rgb[2]':e.detail.value
                 })
         },
 
@@ -96,39 +85,11 @@ Page({
                         success: function(res) {        //调用成功后的回调函数
                                 console.log(res);
                                 // console.log(res.data.data.length);
-
-                                // 初始化灯光颜色-将滑块和颜色调节到实际情况
                                 for (var i = res.data.data.length - 1; i >= 0; i--) {
-                                        if (res.data.data[i].id =="ws2812_state") {
+                                        if (res.data.data[i].id == "ws2812") {
                                                 self.setData({
-                                                    color_state:res.data.data[i].current_value
+                                                        'message.ws2812':res.data.data[i].current_value
                                                 })
-                                        }
-                                        if(res.data.data[i].id == "ws2812_R"){  //红光
-                                                self.setData({
-                                                        color_r:res.data.data[i].current_value,
-                                                        color_r_value:res.data.data[i].current_value
-                                                })
-                                                // console.log(res.data.data[i].current_value);
-                                        }
-                                        if(res.data.data[i].id == "ws2812_G"){  //绿光
-                                                self.setData({
-                                                        color_g:res.data.data[i].current_value,
-                                                        color_g_value:res.data.data[i].current_value
-                                                })
-                                                // console.log(res.data.data[i].current_value);  
-                                        }
-                                        if(res.data.data[i].id == "ws2812_B"){  //蓝光
-                                                self.setData({
-                                                        color_b:res.data.data[i].current_value,
-                                                        color_b_value:res.data.data[i].current_value
-                                                })
-                                                // console.log(res.data.data[i].current_value);
-                                        }
-                                        if (res.data.data[i].id == "tcm"){      //定时控制器
-                                            self.setData({
-                                                        tcm:res.data.data[i].current_value
-                                            })
                                         }
                                 }
                         }
@@ -137,55 +98,49 @@ Page({
 
         //定时器调节记录函数0
         bindTimeChange0: function (e) {
-                console.log('picker发送选择改变，id值为', e.currentTarget.id)
+                console.log('picker发送选择改变，id值为', e)
 
                 this.setData({
-                        time: e.detail.value,
-                        'tcm.m0.time':e.detail.value
+                        'message.ws2812.time[0]':e.detail.value
                 })
-                console.log(this.data.tcm.m0.time);
         },
         bindPickerChange0: function (e) {    //定时器状态调节
                 console.log(e)
-                console.log('id值为', e.currentTarget.id)
                 this.setData({
-                        'tcm.index[0]': e.detail.value
+                        'message.ws2812.index[0]': e.detail.value
                 })
         },
         //定时器调节记录函数1
         bindTimeChange1: function (e) {
                 this.setData({
-                        time: e.detail.value,
-                        'tcm.m1.time':e.detail.value
+                        'message.ws2812.time[1]':e.detail.value
                 })
         },
         bindPickerChange1: function (e) {    //定时器状态调节
                 this.setData({
-                        'tcm.index[1]': e.detail.value
+                        'message.ws2812.index[1]': e.detail.value
                 })
         },
         //定时器调节记录函数2
         bindTimeChange2: function (e) {
                 this.setData({
-                        time: e.detail.value,
-                        'tcm.m2.time':e.detail.value
+                        'message.ws2812.time[2]':e.detail.value
                 })
         },
         bindPickerChange2: function (e) {    //定时器状态调节
                 this.setData({
-                        'tcm.index[2]': e.detail.value
+                        'message.ws2812.index[2]': e.detail.value
                 })
         },
         //定时器调节记录函数3
         bindTimeChange3: function (e) {
                 this.setData({
-                        time: e.detail.value,
-                        'tcm.m3.time':e.detail.value
+                        'message.ws2812.time[3]':e.detail.value
                 })
         },
         bindPickerChange3: function (e) {    //定时器状态调节
                 this.setData({
-                        'tcm.index[3]': e.detail.value
+                        'message.ws2812.index[3]': e.detail.value
                 })
         },
 

@@ -1,0 +1,30 @@
+{
+    "wifi":{
+        "ssid":["wf","nodemcu"],
+        "pwd":["su666688886","12345678"]
+    },
+    "sysLed":{
+        "state":1,
+        "time":500,
+        "brightness":50
+    },
+    "mqtt":{
+        "productId":"194413",
+        "apiKey":"Vt2rLag7l9LtcqUn7dT87psfxEY=",
+        "deviceId":"516161018",
+        "authInfo":"bs01",
+        "subscribe":["sysLed","/room1/ws2812","/room1/led1"]
+    },
+    "ws2812":{
+        "state":0,
+        "rgb":[10,10,10],
+        "index":[0,0,0,0,0],
+        "time":["00:00","00:00","00:00","00:00","00:00"]
+    },
+    "led2":{
+        "state":0,
+        "brightness":0,
+        "index":[0,0,0,0,0],
+        "time":["00:00","00:00","00:00","00:00","00:00"]
+    }
+}

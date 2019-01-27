@@ -25,37 +25,37 @@
                 <!-- 定时控制组0 -->
                 <view class="timing_show">
                         <picker mode="time" id="0" class="picker_class1" value="{{tcm.m0.time}}" start="09:01" end="21:01" bindchange="bindTimeChange0">
-                                <view class="picker">1.灯光将于： {{led2.time[0]}}</view>
+                                <view class="picker">1.灯光将于： {{message.time[0]}}</view>
                         </picker>
                         <picker bindchange="bindPickerChange0" id="0" class="picker_class2" value="{{tcm.index[0]}}" range="{{array}}">
-                                <view class="picker">状态：{{array[led2.index[0]]}}</view>
+                                <view class="picker">状态：{{array[message.ws2812.index[0]]}}</view>
                         </picker>
                 </view>
                 <!-- 定时控制组1 -->
                 <view class="timing_show">
                         <picker mode="time" class="picker_class1" value="{{tcm.m1.time}}" start="09:01" end="21:01" bindchange="bindTimeChange1">
-                                <view class="picker">2.灯光将于： {{led2.time[1]}}</view>
+                                <view class="picker">2.灯光将于： {{message.time[1]}}</view>
                         </picker>
                         <picker bindchange="bindPickerChange1" class="picker_class2" value="{{tcm.index[1]}}" range="{{array}}">
-                                <view class="picker">状态：{{array[led2.index[1]]}}</view>
+                                <view class="picker">状态：{{array[message.ws2812.index[1]]}}</view>
                         </picker>
                 </view>
                 <!-- 定时控制组2 -->
                 <view class="timing_show">
                         <picker mode="time" class="picker_class1" value="{{tcm.m2.time}}" start="09:01" end="21:01" bindchange="bindTimeChange2">
-                                <view class="picker">3.灯光将于： {{led2.time[2]}}</view>
+                                <view class="picker">3.灯光将于： {{message.time[2]}}</view>
                         </picker>
                         <picker bindchange="bindPickerChange2" class="picker_class2" value="{{tcm.index[2]}}" range="{{array}}">
-                                <view class="picker">状态：{{array[led2.index[2]]}}</view>
+                                <view class="picker">状态：{{array[message.ws2812.index[2]]}}</view>
                         </picker>
                 </view>
                 <!-- 定时控制组3 -->
                 <view class="timing_show">
                         <picker mode="time" class="picker_class1" value="{{tcm.m3.time}}" start="09:01" end="21:01" bindchange="bindTimeChange3">
-                                <view class="picker">4.灯光将于： {{led2.time[3]}}</view>
+                                <view class="picker">4.灯光将于： {{message.time[3]}}</view>
                         </picker>
                         <picker bindchange="bindPickerChange3" class="picker_class2" value="{{tcm.index[3]}}" range="{{array}}">
-                                <view class="picker">状态：{{array[led2.index[3]]}}</view>
+                                <view class="picker">状态：{{array[message.ws2812.index[3]]}}</view>
                         </picker>
                 </view>
         </view>

@@ -30,10 +30,30 @@ function sys_state_timer_calback(self)
                 data:{},
                 header: config.config.header,   //请求头部
                 success: function(res) {        //调用成功后的回调函数
-                        console.log(res);   
-                        self.setData({
-                                led2_data:res.data.data[7].current_value
-                        })
+                        console.log(res);
+                        for (var i = res.data.data.length - 1; i >= 0; i--) {
+                               if (res.data.data[i].id == "sysLed"){
+                                    self.setData({
+                                            'message.sysLed':res.data.data[i].current_value
+                                    })
+                               }else if (res.data.data[i].id == "led2") {
+                                    self.setData({
+                                            'message.led2':res.data.data[i].current_value
+                                    })
+                               }else if (res.data.data[i].id == "mqtt") {
+                                    self.setData({
+                                            'message.mqtt':res.data.data[i].current_value
+                                    })
+                               }else if (res.data.data[i].id == "wifi") {
+                                    self.setData({
+                                            'message.wifi':res.data.data[i].current_value
+                                    })
+                               }else if (res.data.data[i].id == "ws2812") {
+                                    self.setData({
+                                            'message.ws2812':res.data.data[i].current_value
+                                    })
+                               }
+                           } 
                         if (res.data.data[6].current_value == "1") {
                                 self.setData({
                                         ischecked1:true
@@ -43,15 +63,15 @@ function sys_state_timer_calback(self)
                                         ischecked1:false
                                 })
                         }
-                        if (res.data.data[7].current_value.state == "1") {  //led2 switch 状态更新
-                                self.setData({
-                                        ischecked2:true
-                                })
-                        }else{
-                                self.setData({
-                                        ischecked2:false
-                                })
-                        }    
+                        // if (res.data.data[7].current_value.state == "1") {  //led2 switch 状态更新
+                        //         self.setData({
+                        //                 ischecked2:true
+                        //         })
+                        // }else{
+                        //         self.setData({
+                        //                 ischecked2:false
+                        //         })
+                        // }    
                 }
         })
 }
@@ -67,17 +87,49 @@ Page({
                 led2_state:"大厅普通灯",
                 online_state_imag:'/images/offline.png',
                 online_state_text:"离线",
-                led2_data:" "
+                led2_data:" ",
+
+                message:{
+                        wifi:{
+                            ssid:["wf","nodemcu"],
+                            pwd:["su666688886","12345678"]
+                        },
+                        sysLed:{
+                            state:1,
+                            time:500,
+                            brightness:50
+                        },
+                        mqtt:{
+                            productId:"194413",
+                            apiKey:"Vt2rLag7l9LtcqUn7dT87psfxEY=",
+                            deviceId:"516161018",
+                            authInfo:"bs01",
+                            subscribe:["sysLed","/room1/ws2812","/room1/led1"]
+                        },
+                        ws2812:{
+                            state:0,
+                            rgb:[10,10,10],
+                            index:[0,0,0,0,0],
+                            time:["00:00","00:00","00:00","00:00","00:00"]
+                        },
+                        led2:{
+                            state:0,
+                            brightness:0,
+                            index:[0,0,0,0,0],
+                            time:["00:00","00:00","00:00","00:00","00:00"]
+                        }   
+                }
         },
         // 按钮1状态改变
         switch1Change: function(e){
+                var self = this;
                 console.log('switch1 发生 change 事件，携带值为',e.detail.value)
-                onenet_post(e.detail.value);
                 console.log(e.detail);
                 this.setData({
                         var1:e.detail.value?"开":"关",
-                        ischecked1:e.detail.value?true:false
+                        'message.ws2812.state':e.detail.value?1:0
                 })
+                config.config.PublishTheme("/room1/ws2812",self.data.message.ws2812);
         },
         // 按钮2状态改变
         switch2Change: function(e){
@@ -85,7 +137,6 @@ Page({
                 console.log('switch2 发生 change 事件，携带值为',e.detail.value)
                 this.setData({
                         var2:e.detail.value?"开":"关",
-                        ischecked2:e.detail.value?true:false,
                         'led2_data.state':e.detail.value?1:0
                 })
 
@@ -128,21 +179,3 @@ Page({
         }
 })
 
-//向onenet发送post请求
-var onenet_post = function(state){
-        var state1 = "OFF";
-        if (state) 
-        {
-                state1 = "ON";
-        }
-        wx.request({
-                        method:'POST',
-                        url:'https://api.heclouds.com/mqtt?topic=/room/led1/' + state1,         //服务器地址
-                        data: {
-                                "state":state1
-                        },
-                        header: config.config.header,
-                        success: function(res) {        //调用成功后的回调函数
-                        }
-                })
-} 
