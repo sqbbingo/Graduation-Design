@@ -17,10 +17,12 @@ function connect_success(client)
             print("subscreibe success:17")
         end)
     end
+    connect_state.mqtt.state = 1
     dofile("time_get.lua")
     dofile("mqttReceive.lua")
     dofile("mqttSend.lua")
-    sysFlashingTime(10000)
+    dofile("bodyControl.lua")
+    sysLedStop()
 end
 
 function handle_mqtt_error(client, reason) 
@@ -29,6 +31,8 @@ end
 
 function do_mqtt_connect()
     sysFlashingTime(1000)
+    sysLedStart()
+    connect_state.mqtt.state = 0
     print("connect to mqtt server: 30")
     mq1:connect("183.230.40.39", 6002,connect_success,handle_mqtt_error)
 end

@@ -1,6 +1,7 @@
 connect_state = {}
 connect_state.wifi = {}
 connect_state.mqtt = {}
+connect_state.mqtt.state = 0
 connect_state.wifi.numn = #message.wifi.ssid    --which wifi is connecting
 connect_state.wifi.numl = #message.wifi.ssid    --the number of wifi configure message 
 

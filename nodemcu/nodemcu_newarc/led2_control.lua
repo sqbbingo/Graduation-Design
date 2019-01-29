@@ -6,15 +6,19 @@ pwm.start(led2_pin)
 --The function of open led2 
 function led2_ON()
     print("led2_ON")
-    pwm.setduty(led2_pin,10*(message.led2.brightness+0))
-    
+    pwm.setduty(led2_pin,10*(message.led2.brightness+0)) 
+end
+--The function of open led2 mandatory
+function led2_ONM(brightness)
+    print("led2_ONM")
+    pwm.setduty(led2_pin,10*(brightness+0)) 
+    brightness = nil
 end
 
 --The function of close led2
 function led2_OFF()
     print("led2_OFF")
     pwm.setduty(led2_pin,10*(message.led2.brightness - message.led2.brightness + 0))
-    
 end
 
 --The function of perform the message receive
