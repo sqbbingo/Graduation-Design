@@ -7,14 +7,39 @@
         <!-- led1 -->
         <view class="btnGroup">
                 <view class="led-imeag"><image src="/images/color_led.png"></image></view>
-                <navigator url="/pages/led_config/led_config" class="led-text" redirect><view class="led-text">{{led1_state}}</view></navigator>
+                <navigator url="/pages/led_config/led_config" class="led-text" navigate><view class="led-text">{{led1_state}}</view></navigator>
                 <switch checked="{{message.ws2812.state}}" bindchange="switch1Change"></switch>
                 <text> {{ var1 }} </text>                              
         </view>
         <view class="btnGroup">
                 <view class="led-imeag"><image src="/images/led_on.png"></image></view>
-                <navigator url="/pages/led2_config/led2_config" class="led-text" redirect><view class="led-text">{{led2_state}}</view></navigator>
+                <navigator url="/pages/led2_config/led2_config" class="led-text" navigate><view class="led-text">{{led2_state}}</view></navigator>
                 <switch checked="{{message.led2.state}}" bindchange="switch2Change"></switch>
                 <text> {{ var2 }} </text>             
+        </view>
+        <view class="btnGroup">
+                <view class="led-imeag"><image src="/images/sensor.png"></image></view>
+                <navigator url="/pages/room2/sensor_config/sensor_config" navigate><view>Room1传感器配置页面</view></navigator>            
+        </view>
+        <!-- room2 -->
+        <view class="btnGroup">
+                <view class="led-imeag"><image src="/images/led_on.png"></image></view>
+                <navigator url="/pages/room2/led_config/led_config" class="led-text" navigate><view class="led-text">{{room2led1_state}}</view></navigator>
+                <switch checked="{{message2.led1.state}}" bindchange="room2switch1Change"></switch>
+                <text> {{ room2var1 }} </text>             
+        </view>
+        <view class="btnGroup">
+                <view class="led-imeag"><image src="/images/led_on.png"></image></view>
+                <navigator url="/pages/room2/led2_config/led2_config" class="led-text" navigate><view class="led-text">{{room2led2_state}}</view></navigator>
+                <switch checked="{{message2.led2.state}}" bindchange="room2switch2Change"></switch>
+                <text> {{ room2var2 }} </text>             
+        </view>
+        <view class="btnGroup">
+                <view class="led-imeag"><image src="/images/sensor.png"></image></view>
+                <navigator url="/pages/room2/sensor_config/sensor_config" navigate><view>Room2传感器配置页面</view></navigator>            
+        </view>
+        <view>
+                <navigator url="/pages/dht/dht" class="led-text" navigate><view class="led-text">dht</view></navigator>
+                <button bindtap="button_dht">dht</button>
         </view>
 </view>

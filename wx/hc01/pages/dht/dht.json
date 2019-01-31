@@ -1,0 +1,8 @@
+{
+        "backgroundTextStyle":"light",
+        "navigationBarBackgroundColor":"#1fff",
+        "navigationBarTitleText":"温湿度",
+        "navigationBarTextStyle":"black",
+        "enablePullDownRefresh": true, 
+        "backgroundColor": "#a9a9a9" 
+}

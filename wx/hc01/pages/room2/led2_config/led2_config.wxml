@@ -1,0 +1,65 @@
+<view>
+        <!-- 亮度调节 -->
+        <view class="container1">
+                <text>亮度调节</text>
+                <view>
+                        <slider bindchange="slider4change" min="0" max="100" show-value value="{{message.led2.brightness}}"></slider>
+                </view>
+        </view>
+        <!-- 颜色调节 -->
+        <!-- <view class="container1">
+                <view class="color_now">
+                        <text>颜色调节：</text>
+                        <view class="view_style" style="background-color:rgb({{message.led2.rgb[0]}},{{message.led2.rgb[1]}},{{message.ws2812.rgb[2]}});"></view>
+                </view>
+                <view>
+                        <slider bindchange="sliderRchange" class="slider_class" min="0" max="255" activeColor="red" show-value value="{{message.ws2812.rgb[0]}}"></slider>
+                        <slider bindchange="sliderGchange" class="slider_class" min="0" max="255" activeColor="green" show-value value="{{message.ws2812.rgb[1]}}"></slider>
+                        <slider bindchange="sliderBchange" class="slider_class" min="0" max="255" activeColor="blue" show-value value="{{message.ws2812.rgb[2]}}"></slider>
+                </view>
+        </view> -->
+
+        <!-- 定时调节 -->
+        <view class="section container1">
+                <view class="section__title">灯光定时控制</view>
+                <!-- 定时控制组0 -->
+                <view class="timing_show">
+                        <picker mode="time" id="0" class="picker_class1" value="{{message.led2.time[0]}}" start="00:00" end="23:59" bindchange="bindTimeChange0">
+                                <view class="picker">1.灯光将于： {{message.led2.time[0]}}</view>
+                        </picker>
+                        <picker bindchange="bindPickerChange0" id="0" class="picker_class2" value="{{message.led2.index[0]}}" range="{{array}}">
+                                <view class="picker">状态：{{array[message.led2.index[0]]}}</view>
+                        </picker>
+                </view>
+                <!-- 定时控制组1 -->
+                <view class="timing_show">
+                        <picker mode="time" class="picker_class1" value="{{message.led2.time[1]}}" start="00:00" end="23:59" bindchange="bindTimeChange1">
+                                <view class="picker">2.灯光将于： {{message.led2.time[1]}}</view>
+                        </picker>
+                        <picker bindchange="bindPickerChange1" class="picker_class2" value="{{message.led2.index[1]}}" range="{{array}}">
+                                <view class="picker">状态：{{array[message.led2.index[1]]}}</view>
+                        </picker>
+                </view>
+                <!-- 定时控制组2 -->
+                <view class="timing_show">
+                        <picker mode="time" class="picker_class1" value="{{message.led2.time[2]}}" start="00:00" end="23:59" bindchange="bindTimeChange2">
+                                <view class="picker">3.灯光将于： {{message.led2.time[2]}}</view>
+                        </picker>
+                        <picker bindchange="bindPickerChange2" class="picker_class2" value="{{message.led2.index[2]}}" range="{{array}}">
+                                <view class="picker">状态：{{array[message.led2.index[2]]}}</view>
+                        </picker>
+                </view>
+                <!-- 定时控制组3 -->
+                <view class="timing_show">
+                        <picker mode="time" class="picker_class1" value="{{message.led2.time[3]}}" start="00:00" end="23:59" bindchange="bindTimeChange3">
+                                <view class="picker">4.灯光将于： {{message.led2.time[3]}}</view>
+                        </picker>
+                        <picker bindchange="bindPickerChange3" class="picker_class2" value="{{message.led2.index[3]}}" range="{{array}}">
+                                <view class="picker">状态：{{array[message.led2.index[3]]}}</view>
+                        </picker>
+                </view>
+        </view>
+
+        <button bindtap="button_cancel" type="warn" class="button_class">取消</button>
+        <button bindtap="button_ok" type="primary" class="button_class" hover-class="custom-button-hover-class" formType="submit">确定</button>
+</view>

@@ -12,7 +12,7 @@ tmr.register(voiceTimer, 25000, tmr.ALARM_SEMI, function()
         end
         voiceState = nil
         if (connect_state.mqtt.state == 1) then
-            mq1:publish("/room1/voice", 0, 0, 0)
+            mq1:publish("/room1/voice", "0", 0, 0)
         end
     end
 end)
@@ -36,7 +36,7 @@ gpio.trig(voicePin, "up", function()
         end
         voiceState = 1
         if (connect_state.mqtt.state == 1) then
-            mq1:publish("/room1/voice", 1, 0, 0)
+            mq1:publish("/room1/voice", "1", 0, 0)
         end
     end
 end)

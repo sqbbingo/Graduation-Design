@@ -1,0 +1,7 @@
+<view>
+    <view class="sytle_show">
+        <text> 人体红外传感器：\n </text>        
+        <text> 检测到人体时将会发送：/room2/body:1\n</text>
+        <text> 检测到人体25s后发送：/room2/body:0 </text>        
+    </view>        
+</view>

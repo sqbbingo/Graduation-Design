@@ -8,8 +8,6 @@ tmr.register(lightTimer, 10*1000, tmr.ALARM_AUTO, function()
         print("light change")
         message.light.state = gpio.read(lightPin)
         if (connect_state.mqtt.state == 1) then
-            print("publish:/room1/light")
-            mq1:publish("/room1/light",message.light.state, 0, 0)
             upload_data()
         end
     end
