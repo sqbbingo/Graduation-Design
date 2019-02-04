@@ -6,14 +6,14 @@
     "sysLed":{
         "state":1,
         "time":500,
-        "brightness":50
+        "brightness":20
     },
     "mqtt":{
         "productId":"194413",
         "apiKey":"Vt2rLag7l9LtcqUn7dT87psfxEY=",
-        "deviceId":"516161018",
-        "authInfo":"bs01",
-        "subscribe":["sysLed","/room1/ws2812","/room1/led2"]
+        "deviceId":"509113251",
+        "authInfo":"nodemcu03",
+        "subscribe":["sysLed","/room2/ws2812","/room2/led2"]
     },
     "ws2812":{
         "state":0,
@@ -23,7 +23,7 @@
     },
     "led2":{
         "state":0,
-        "brightness":50,
+        "brightness":0,
         "index":[1,2,3,4,0],
         "time":["11:00","13:30","19:20","21:10","00:00"]
     },

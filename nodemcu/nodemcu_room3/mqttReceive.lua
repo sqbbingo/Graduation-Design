@@ -1,19 +1,15 @@
 mq1:on("message", function(client, topic, data)
     print(topic .. ": " .. data)
     if string.find(topic,"/room2/ws2812") then --rgb_led control form wx
-        ws2812_control(data)
+        -- ws2812_control(data)
     elseif string.find(topic,"/room2/led2") then --/room2/led2 control form wx
-        if (string.len(data) > 4) then
-            led2_control(data)  --/room2/led2 control form wx
-        else
-            led2_controlv(data)  --/room2/led2 control form yuyingshibei
-        end
-    elseif string.find(topic,"/room1/light") then --message.light.state control form room1/light
-        message.light.state = data
-    elseif string.find(topic,"/room1/body") then --message.light.body control form room1/body
-        if ((data+0) == 1) then
-            control_body()
-        end
+        -- led2_control(data)
+    -- elseif string.find(topic,"/room1/light") then --message.light.state control form room1/light
+    --     message.light.state = data
+    -- elseif string.find(topic,"/room1/body") then --message.light.body control form room1/body
+    --     if ((data+0) == 1) then
+    --         control_body()
+    --     end
     elseif string.find(topic,"$creq") then
         if string.find(data,"ledR:") then
             local i = string.byte(data,string.find(data,"}")+1)-48

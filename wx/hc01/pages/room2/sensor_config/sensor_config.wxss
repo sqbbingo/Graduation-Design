@@ -1,0 +1,5 @@
+.sytle_show{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+}

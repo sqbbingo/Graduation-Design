@@ -2,7 +2,7 @@
   "pages":[
     
     "pages/led/led",
-    "pages/dht/dht",
+    "pages/sensor1_config/sensor1_config",
     "pages/led_config/led_config",
     "pages/led2_config/led2_config",
     "pages/room2/led_config/led_config",

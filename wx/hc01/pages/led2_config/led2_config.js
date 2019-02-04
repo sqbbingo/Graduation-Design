@@ -40,16 +40,43 @@ Page({
                 var self = this;
                 
                 config.config.PublishTheme("/room1/led2",self.data.message.led2);
-                wx.navigateTo({
-                        url: '/pages/led/led',
-                })              //跳转到led界面
+                // wx.navigateTo({
+                //         url: '/pages/led/led',
+                // })              //跳转到led界面
+                wx.showToast({
+                        title: '5秒后生效',
+                        icon: 'success',
+                        duration: 5000//持续的时间
+               })
         },
 
         // 取消按钮-直接跳转到主页
         button_cancel(e) {
-                wx.navigateTo ({
-                        url: '/pages/led/led',
-                })              //跳转到led界面
+                // wx.navigateTo ({
+                //         url: '/pages/led/led',
+                // })              //跳转到led界面
+                var self = this;
+                wx.showToast({
+                        title: '取消',
+                        icon: 'cancel',
+                        duration: 2000//持续的时间
+               })
+                wx.request({
+                        url:'https://api.heclouds.com/devices/' + config.config.deviceid + '/datastreams',
+                        data:{},
+                        header: config.config.header,   //请求头部
+                        success: function(res) {        //调用成功后的回调函数
+                                console.log(res);
+                                // console.log(res.data.data.length);
+                                for (var i = res.data.data.length - 1; i >= 0; i--) {
+                                        if (res.data.data[i].id == "led2") {
+                                                self.setData({
+                                                        'message.led2':res.data.data[i].current_value
+                                                })
+                                        }
+                                }
+                        }
+                })
         },
 
         //页面加载函数

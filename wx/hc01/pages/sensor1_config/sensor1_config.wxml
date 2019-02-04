@@ -1,0 +1,11 @@
+<view>
+    <view>
+        <!-- canvas.wxml -->
+        <text> room1温湿度 </text>        
+        <canvas style="width: 380px; height: 220px;" canvas-id="myCanvas"></canvas>
+    </view>
+    <view class="btnGroup">
+        <text class="led-imeag"> room1光照强度： </text>   
+        <view class="led-imeag"><image style="" mode="" src="{{light_state}}" binderror="" bindload=""></image> </view>    
+    </view>
+</view>

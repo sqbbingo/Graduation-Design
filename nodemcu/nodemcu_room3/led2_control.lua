@@ -35,15 +35,6 @@ function led2_control(data)
     end
 end
 
---The function of led2 control from Speech recognition
-function led2_controlv(data)
-    if (data == "on") then
-        led2_ON()
-    else
-        led2_OFF()
-    end
-end
-
 if (message.led2.state == 1) then
     led2_ON()
 else
