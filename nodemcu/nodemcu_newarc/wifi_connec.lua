@@ -7,7 +7,7 @@ connect_state.wifi.numl = #message.wifi.ssid    --the number of wifi configure m
 wifi.setmode(wifi.STATION)
 
 wifiStateMonTimer = tmr.create()    --wifi connect state monitoring
-tmr.register(wifiStateMonTimer, 5*1000, tmr.ALARM_AUTO , function ()
+tmr.register(wifiStateMonTimer, 20*1000, tmr.ALARM_AUTO , function ()
     if (wifi.sta.getip() == nil) then
         print("Not connect to wifi")
         connect_state.wifi.state = 0    --fail connect to wifi

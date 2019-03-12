@@ -1,7 +1,7 @@
 {
     "wifi":{
-        "ssid":["wf","nodemcu"],
-        "pwd":["su666688886","12345678"]
+        "ssid":["bingo"],
+        "pwd":["1507300136"]
     },
     "sysLed":{
         "state":1,
