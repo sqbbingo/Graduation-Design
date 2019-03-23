@@ -1,7 +1,7 @@
 {
     "wifi":{
-        "ssid":["bingo"],
-        "pwd":["1507300136"]
+        "ssid":["bingo","Gosuncn-guest"],
+        "pwd":["1507300136","WXgxx300098"]
     },
     "sysLed":{
         "state":1,
