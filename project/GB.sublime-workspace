@@ -1,0 +1,1272 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"sta",
+				"statictest"
+			],
+			[
+				"p",
+				"printf\tprintf …"
+			],
+			[
+				"di",
+				"digitalWrite\tArduino digitalWrite"
+			],
+			[
+				"de",
+				"delay\tArduino delay()"
+			],
+			[
+				"ch",
+				"ch1"
+			],
+			[
+				"std",
+				"stdio.h\tstandard header"
+			],
+			[
+				"s",
+				"sys_time_day"
+			],
+			[
+				"water",
+				"water_off"
+			],
+			[
+				"wa",
+				"water_stat_timer"
+			],
+			[
+				"wat",
+				"water_state"
+			],
+			[
+				"re",
+				"recb"
+			],
+			[
+				"l",
+				"led2_OFF"
+			],
+			[
+				"le",
+				"led2_ON"
+			],
+			[
+				"mess",
+				"message2"
+			],
+			[
+				"hu",
+				"humi"
+			],
+			[
+				"dh",
+				"dhtData"
+			],
+			[
+				"d",
+				"dhtData"
+			],
+			[
+				"bo",
+				"bodyState"
+			],
+			[
+				"B",
+				"bodyState"
+			],
+			[
+				"voice",
+				"voiceTimer"
+			],
+			[
+				"li",
+				"lightTimer"
+			],
+			[
+				"led",
+				"led2"
+			],
+			[
+				"roo",
+				"room1"
+			],
+			[
+				"ws",
+				"ws2812OFF"
+			],
+			[
+				"sy",
+				"sysLedPin"
+			],
+			[
+				"sys",
+				"sysLedTimer"
+			],
+			[
+				"con",
+				"connecting"
+			],
+			[
+				"fo",
+				"forp\tfor k,v in pairs()"
+			],
+			[
+				"rgb",
+				"rgb_data"
+			],
+			[
+				"co",
+				"color_state"
+			],
+			[
+				"js",
+				"json1"
+			],
+			[
+				"cl",
+				"close"
+			],
+			[
+				"r",
+				"res"
+			],
+			[
+				"upl",
+				"upload_onenet_data"
+			],
+			[
+				"timin",
+				"timing_control_timer"
+			],
+			[
+				"t",
+				"tcm"
+			],
+			[
+				"conso",
+				"timing_control_message"
+			],
+			[
+				"tim",
+				"time"
+			],
+			[
+				"im",
+				"images"
+			],
+			[
+				"pad",
+				"padding-left\tproperty"
+			],
+			[
+				"wbl",
+				"wblockfor\tblock_for"
+			],
+			[
+				"wi",
+				"winput\tinput"
+			],
+			[
+				"son",
+				"songname"
+			],
+			[
+				"so",
+				"song"
+			],
+			[
+				"get",
+				"getStorageSync"
+			],
+			[
+				"margin",
+				"margin-bottom\tproperty"
+			],
+			[
+				"ba",
+				"background\tproperty"
+			],
+			[
+				"wid",
+				"width\tproperty"
+			],
+			[
+				"fon",
+				"font-size\tproperty"
+			],
+			[
+				"ov",
+				"overflow-y\tproperty"
+			],
+			[
+				"song",
+				"song_id"
+			],
+			[
+				"wb",
+				"wblockif\tblock_for"
+			],
+			[
+				"pa",
+				"padding-left\tproperty"
+			],
+			[
+				"text",
+				"text-align\tproperty"
+			],
+			[
+				"se",
+				"searchByNameUrl"
+			],
+			[
+				"data",
+				"data2"
+			],
+			[
+				"da",
+				"data2"
+			],
+			[
+				"la",
+				"lastoper"
+			],
+			[
+				"els",
+				"els"
+			],
+			[
+				"nu",
+				"num_9"
+			],
+			[
+				"col",
+				"color\tproperty"
+			],
+			[
+				"tex",
+				"text-align\tproperty"
+			],
+			[
+				"min",
+				"min-height\tproperty"
+			],
+			[
+				"wte",
+				"wtextarea\ttextarea"
+			],
+			[
+				"num",
+				"num1"
+			],
+			[
+				"border-r",
+				"border-radius\tproperty"
+			],
+			[
+				"binn",
+				"bindInput1"
+			],
+			[
+				"warn",
+				"warnSize"
+			],
+			[
+				"pri",
+				"primarySize"
+			],
+			[
+				"set",
+				"setData"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"mar",
+				"margin\tproperty"
+			],
+			[
+				"fl",
+				"flex-start\tjustify-content"
+			],
+			[
+				"f",
+				"flex-start\talign-items"
+			],
+			[
+				"i",
+				"Infraree_cb"
+			],
+			[
+				"fun",
+				"function\tfunction"
+			],
+			[
+				"timing_con",
+				"timing_control_message"
+			],
+			[
+				"on",
+				"on_message"
+			],
+			[
+				"han",
+				"hanois"
+			],
+			[
+				"in",
+				"init_stack"
+			],
+			[
+				"h",
+				"hanois"
+			],
+			[
+				"tmp",
+				"tmp"
+			],
+			[
+				"ss",
+				"ss1"
+			],
+			[
+				"tm",
+				"tmp1"
+			],
+			[
+				"ma",
+				"maxlen"
+			],
+			[
+				"size",
+				"size"
+			],
+			[
+				"blu",
+				"blue1"
+			],
+			[
+				"ne",
+				"next"
+			],
+			[
+				"gr",
+				"green1"
+			],
+			[
+				"yellow",
+				"yellow2"
+			],
+			[
+				"yell",
+				"yellow"
+			],
+			[
+				"ret",
+				"ret"
+			],
+			[
+				"DE",
+				"devno"
+			],
+			[
+				"pr",
+				"printk"
+			],
+			[
+				"gpi",
+				"GPIO_LED_PIN_NUM"
+			],
+			[
+				"gpio",
+				"gpio_set_value"
+			],
+			[
+				"st",
+				"sturct"
+			],
+			[
+				"str",
+				"sturct"
+			],
+			[
+				"G",
+				"gpio_direction_output"
+			],
+			[
+				"g",
+				"GPIO_LED_PIN_NUM"
+			],
+			[
+				"N",
+				"n"
+			],
+			[
+				"SIG",
+				"sighandler"
+			],
+			[
+				"sig",
+				"signal"
+			],
+			[
+				"fif",
+				"FIFO"
+			],
+			[
+				"ro",
+				"routine2"
+			],
+			[
+				"na",
+				"NAMELEN"
+			],
+			[
+				"FP",
+				"fp_dst"
+			],
+			[
+				"fd",
+				"fd2"
+			],
+			[
+				"lis",
+				"list_add_tail"
+			],
+			[
+				"new",
+				"new_node"
+			],
+			[
+				"for",
+				"for\tFor Loop"
+			],
+			[
+				"A",
+				"ABCD"
+			],
+			[
+				"O",
+				"obj"
+			],
+			[
+				"b",
+				"boolean"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/G/code/Graduation Design/nodemcu/nodemcu_newarc/mqttSend.lua",
+			"settings":
+			{
+				"buffer_size": 1314,
+				"encoding": "UTF-8 with BOM",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/C++/C Single File.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/C.sublime-build",
+					""
+				],
+				[
+					"Packages/User/C.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/C.sublime-build",
+					"RunInCommand"
+				]
+			],
+			[
+				"Packages/C++/C Single File.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/C.sublime-build",
+					""
+				],
+				[
+					"Packages/User/C.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/User/C.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/TDM-GCC.sublime-build",
+					""
+				],
+				[
+					"Packages/User/TDM-GCC.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/User/TDM-GCC.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Java/Ant.sublime-build",
+					""
+				],
+				[
+					"Packages/Java/JavaC.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Java/JavaC.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/User/C - 副本.sublime-build",
+					""
+				],
+				[
+					"Packages/User/C - 副本.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/User/C - 副本.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/User/C.sublime-build",
+					""
+				],
+				[
+					"Packages/User/C.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/User/C.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/User/C.sublime-build",
+					""
+				],
+				[
+					"Packages/User/C.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/C.sublime-build",
+					"RunInCommand"
+				]
+			],
+			[
+				"Packages/User/C.sublime-build",
+				"RunInCommand"
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 131.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"ser",
+				"Serial Monitor: Write Line"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"hex",
+				"HexViewer: Toggle Hex View"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"i",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"q",
+				"BracketHighlighter: Quick Start Guide"
+			],
+			[
+				"seri",
+				"Serial Monitor: Disconnect"
+			],
+			[
+				"serial mor",
+				"Serial Monitor: Connect"
+			],
+			[
+				"serial ",
+				"Serial Monitor: Write Line"
+			],
+			[
+				"serial",
+				"Serial Monitor: Write Line"
+			],
+			[
+				"arduino",
+				"Set Syntax: Arduino"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"view",
+				"View: Toggle Menu"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"open re",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"pack",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"packageresou",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"Package ResourceViewer:Open Resource",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"install  package",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 565.0
+	},
+	"console":
+	{
+		"height": 165.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"q",
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"sf",
+			"fsdf"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/G/code/Graduation Design/wx/hc01",
+		"/G/code/Graduation Design/nodemcu/nodemcu_newarc"
+	],
+	"file_history":
+	[
+		"/G/code/Graduation Design/GB.sublime-project",
+		"/G/code/c/test.c",
+		"/C/Users/bingo/AppData/Roaming/Sublime Text 3/Packages/User/Base File.sublime-settings",
+		"/C/Users/bingo/AppData/Roaming/Sublime Text 3/Packages/Sublimerge 3/Sublimerge 3.sublime-settings",
+		"/C/Users/bingo/AppData/Roaming/Sublime Text 3/Packages/Alignment/Base File.sublime-settings",
+		"/C/Users/bingo/AppData/Roaming/Sublime Merge/Packages/User/Preferences.sublime-settings",
+		"/C/Users/bingo/AppData/Roaming/Sublime Text 3/Packages/User/Sublimerge 3.sublime-settings",
+		"/C/Users/bingo/AppData/Roaming/Sublime Text 3/Packages/User/Word Highlight.sublime-settings",
+		"/G/code/arduino/test/test.ino",
+		"/F/software/arduino1.8/Arduino/hardware/arduino/avr/cores/arduino/Print.h",
+		"/F/software/arduino1.8/Arduino/hardware/arduino/avr/cores/arduino/Stream.h",
+		"/C/Users/bingo/AppData/Roaming/Sublime Text 3/Packages/User/Stino/Default (Windows).sublime-keymap",
+		"/C/Users/bingo/AppData/Roaming/Sublime Text 3/Packages/User/Stino/app_dir.stino-settings",
+		"/G/code/arduino/dht11/dht11_test/dht11_test.ino",
+		"/F/software/arduino1.8/Arduino/examples/01.Basics/Blink/Blink.ino",
+		"/C/Users/bingo/Documents/Arduino/test1/test1.ino",
+		"/F/software/arduino1.8/Arduino/examples/01.Basics/AnalogReadSerial/AnalogReadSerial.ino",
+		"/C/Users/bingo/AppData/Local/Arduino15/packages.stino-settings",
+		"/C/Users/bingo/Documents/Arduino/test/test.ino",
+		"/G/code/c/st.c",
+		"/G/code/Graduation Design/wx/hc01/app.json",
+		"/C/Users/bingo/AppData/Roaming/Sublime Text 3/Packages/DocBlockr/README.md",
+		"/C/Users/bingo/AppData/Roaming/Sublime Text 3/Packages/DocBlockr/Base File.sublime-settings",
+		"/C/Users/bingo/AppData/Roaming/Sublime Text 3/Packages/SublimeAStyleFormatter/SublimeAStyleFormatter.sublime-settings",
+		"/G/code/Graduation Design/nodemcu/nodemcu_newarc/wifi_connec.lua",
+		"/C/Users/bingo/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/bingo/AppData/Roaming/Sublime Text 3/Packages/serial_monitor/serial_monitor.sublime-settings",
+		"/C/Users/bingo/AppData/Roaming/Sublime Text 3/Packages/Alignment/Default (Windows).sublime-keymap",
+		"/G/code/Graduation Design/nodemcu/nodemcu_room2/wifi_connec.lua",
+		"/G/code/Graduation Design/nodemcu/nodemcu_room2/message.json",
+		"/G/GOSUNCN/2_stepper_motor/code/参考/GXX-PUL5820-ADG-driver-App5.323/Src/main.c",
+		"/G/GOSUNCN/2_stepper_motor/code/参考/GXX-PUL5820-ADG-driver-App5.323/Src/gpio.c",
+		"/G/GOSUNCN/2_stepper_motor/code/参考/GXX-PUL5820-ADG-driver-App5.323/Inc/gpio.h",
+		"/G/GOSUNCN/2_stepper_motor/code/参考/GXX-PUL5820-ADG-driver-App5.323/Src/main-iap.c",
+		"/C/Users/bingo/AppData/Roaming/Sublime Text 3/Packages/User/Python3.sublime.build",
+		"/C/Users/bingo/AppData/Roaming/Sublime Text 3/Packages/User/C.sublime-build",
+		"/G/大学/STM32/各种版本资料/0-秉火【F103开发板-指南者】光盘资料/A盘（资料盘）/3-程序源码/1.固件库例程/21-USART—串口通信/USART1—USART1指令控制RGB彩灯/User/main.c",
+		"/G/大学/STM32/各种版本资料/原子/2，标准例程-库函数版本/实验4 串口实验/SYSTEM/usart/usart.c",
+		"/G/大学/STM32/各种版本资料/原子/2，标准例程-库函数版本/实验4 串口实验/USER/stm32f10x_it.c",
+		"/G/大学/STM32/各种版本资料/0-秉火【F103开发板-指南者】光盘资料/A盘（资料盘）/3-程序源码/1.固件库例程/24-I2C—读写EEPROM/AT24C02存储小数/User/stm32f10x_it.c",
+		"/G/大学/STM32/各种版本资料/0-秉火【F103开发板-指南者】光盘资料/A盘（资料盘）/3-程序源码/1.固件库例程/25-SPI—读写串行FLASH（W25Q64）/2-W25Q64存储小数和整数/User/stm32f10x_it.c",
+		"/G/大学/STM32/各种版本资料/0-秉火【F103开发板-指南者】光盘资料/A盘（资料盘）/3-程序源码/1.固件库例程/25-SPI—读写串行FLASH（W25Q64）/2-W25Q64存储小数和整数/User/usart/bsp_usart.c",
+		"/G/大学/STM32/各种版本资料/0-秉火【F103开发板-指南者】光盘资料/A盘（资料盘）/3-程序源码/1.固件库例程/33-TIM—通用定时器/3-TIM—通用定时器-输入捕获-测量脉冲宽度/User/stm32f10x_it.c",
+		"/G/大学/STM32/各种版本资料/0-秉火【F103开发板-指南者】光盘资料/A盘（资料盘）/3-程序源码/1.固件库例程/33-TIM—通用定时器/3-TIM—通用定时器-输入捕获-测量脉冲宽度/User/usart/bsp_usart.c",
+		"/G/大学/STM32/各种版本资料/0-秉火【F103开发板-指南者】光盘资料/A盘（资料盘）/3-程序源码/1.固件库例程/21-USART—串口通信/USART1接发-把中断接收到的数据放到数组中/User/stm32f10x_it.c",
+		"/G/大学/STM32/ucos/ucos工程模板/STM32-UCOS-III模板/USER/stm32f10x_it.c",
+		"/G/大学/STM32/ucos/ucos工程模板/STM32-UCOS-III模板/BSP/USART/USART.c",
+		"/G/code/arduino/sketch_jul20a/sketch_jul20a.ino",
+		"/C/Users/bingo/AppData/Roaming/Sublime Text 3/Packages/User/TDM-GCC.sublime-build",
+		"/G/java code/41/Test.java",
+		"/G/GOSUNCN/2_stepper_motor/code/参考/Arduino-and-TMC5130/TMC5130-EVAL/TMC5130_registers.h",
+		"/G/GOSUNCN/2_stepper_motor/code/spi_tmc5130_stepper_montor1/User/tmc5130/tmc5130.h",
+		"/G/GOSUNCN/2_stepper_motor/code/spi_tmc5130_stepper_montor1/User/spi/spi1.h",
+		"/G/GOSUNCN/2_stepper_motor/code/spi_tmc5130_stepper_montor/User/spi/spi1.c",
+		"/G/GOSUNCN/2_stepper_motor/code/spi_tmc5130_stepper_montor/User/spi/spi2.c",
+		"/F/1临时文件夹/360/360zip$Temp/360$0/TMC5130_registers.h",
+		"/F/1临时文件夹/360/360zip$Temp/360$0/TMC5130A-TA.c",
+		"/G/GOSUNCN/2_stepper_motor/5130/TMC/TMC5130A-TA/CRC-SimpleExample/Rhino-CRC.h",
+		"/G/GOSUNCN/2_stepper_motor/5130/TMC/TMC5130A-TA/CRC-SimpleExample/Rhino-CRC.c",
+		"/G/GOSUNCN/2_stepper_motor/code/spi_tmc5130_stepper/User/flash/bsp_spi_flash.c",
+		"/G/GOSUNCN/2_stepper_motor/code/spi_tmc5130_stepper/User/flash/bsp_spi_flash.h",
+		"/G/大学/STM32/工程模板/stm32c8t6 12M模板/User/delay.c",
+		"/G/大学/STM32/工程模板/stm32c8t6 12M模板/User/sys.c",
+		"/G/大学/STM32/各种版本资料/0-秉火【F103开发板-指南者】光盘资料/A盘（资料盘）/3-程序源码/1.固件库例程/GPIO输出—蜂鸣器/User/main.c",
+		"/G/GOSUNCN/2_stepper_motor/5130/TMC/TMC5130-EvalSystem/main.c",
+		"/G/code/lua/test.lua",
+		"/G/code/c/test.cpp",
+		"/G/code/Graduation Design/nodemcu/nodemcu_newarc/led2_control.lua",
+		"/G/code/Graduation Design/nodemcu/nodemcu_newarc/voiceControl.lua",
+		"/G/code/Graduation Design/nodemcu/nodemcu_newarc/mqtt_connect.lua",
+		"/G/code/抽水/nodemcu_newarc/wifi_connec.lua",
+		"/F/1临时文件夹/360/360zip$Temp/360$3/init.lua",
+		"/F/迅雷下载/李熙墨闺房私术私房课/解压密码.html",
+		"/G/code/Graduation Design/wx/hc01/config.js",
+		"/G/code/Graduation Design/wx/hc01/pages/room2/led2_config/led2_config.js",
+		"/G/code/Graduation Design/wx/hc01/pages/room2/led_config/led_config.js",
+		"/G/code/Graduation Design/nodemcu/nodemcu_newarc/sysLed.lua",
+		"/G/code/Graduation Design/nodemcu/nodemcu_newarc/keyControl.lua",
+		"/G/code/Graduation Design/nodemcu/nodemcu_newarc/bodyControl.lua",
+		"/G/code/Graduation Design/nodemcu/nodemcu_newarc/dht.lua",
+		"/G/code/Graduation Design/nodemcu/nodemcu1/init.lua",
+		"/G/code/Graduation Design/nodemcu/nodemcu_newarc/init.lua",
+		"/G/code/Graduation Design/nodemcu/nodemcu_newarc/i2cRead.lua",
+		"/F/360浏览器下载/【Realplay】+PCF8591模块+ADDA转换模块+模数数模转换送杜邦线/YL-40 AD模块资料/YL-40模块测试程序/四路采集串口显示/DA-AD.C",
+		"/C/Users/bingo/AppData/Roaming/Sublime Text 3/Packages/Color Scheme - Default/Monokai.sublime-color-scheme",
+		"/G/code/Graduation Design/nodemcu/nodemcu1/led2_control.lua",
+		"/G/code/Graduation Design/wx/hc01/pages/led_config/led_config.wxml",
+		"/G/code/Graduation Design/wx/hc01/pages/led_config/led_config.js",
+		"/G/code/Graduation Design/nodemcu/nodemcu1/message.json",
+		"/G/code/Graduation Design/wx/hc01/pages/led2_config/led2_config.js",
+		"/G/code/Graduation Design/wx/hc01/pages/led2_config/led2_config.wxml",
+		"/G/code/Graduation Design/nodemcu/nodemcu_newarc/message.json",
+		"/G/code/Graduation Design/nodemcu/nodemcu_newarc/ws2812Control.lua",
+		"/G/code/Graduation Design/nodemcu/nodemcu_newarc/mqttReceive.lua",
+		"/G/code/Graduation Design/nodemcu/nodemcu_newarc/mqttSend.lua",
+		"/G/code/Graduation Design/nodemcu/nodemcu_newarc/config_message.lua",
+		"/G/code/Graduation Design/wx/hc01/pages/led2_config/led2_config.json",
+		"/G/code/Graduation Design/wx/hc01/pages/led_config/led_config.wxss",
+		"/G/code/Graduation Design/wx/hc01/pages/led_config/led_config.json",
+		"/G/code/Graduation Design/wx/hc01/pages/led/led.wxss",
+		"/G/code/Graduation Design/wx/hc01/pages/led/led.wxml",
+		"/G/code/wechat/test/wxui_wxss/style/widget/weui-button/weui-button.wxss",
+		"/G/code/wechat/test/wxui_wxss/app.json",
+		"/G/code/wechat/test/wxui_wxss/style/weui.wxss",
+		"/G/code/wechat/ch12/pages/list/list.json",
+		"/G/code/wechat/ch12/pages/test/test.wxss",
+		"/G/code/wechat/ch12/pages/test/test.json",
+		"/G/code/wechat/ch12/pages/test/test.js",
+		"/G/code/wechat/ch12/pages/index/index.js",
+		"/C/Users/bingo/AppData/Roaming/Sublime Text 3/Packages/User/weapp-snippet/weappSnippet/input.sublime-snippet",
+		"/G/code/wechat/ch12/config.js",
+		"/G/code/wechat/ch12/pages/search/search.json",
+		"/G/code/wechat/ch12/app.json",
+		"/C/Users/bingo/AppData/Roaming/Sublime Text 3/Packages/User/weapp-snippet/weappSnippet/block_for.sublime-snippet",
+		"/C/Users/bingo/AppData/Roaming/Sublime Text 3/Packages/User/weapp-snippet/weappSnippet/block_if.sublime-snippet",
+		"/C/Users/bingo/AppData/Roaming/Sublime Text 3/Packages/User/weapp-snippet/weappSnippet/image.sublime-snippet",
+		"/C/Users/bingo/AppData/Roaming/Sublime Text 3/Packages/User/weapp-snippet/weappSnippet/scroll_view.sublime-snippet",
+		"/G/code/wechat/ch12/pages/index/index.wxss",
+		"/G/code/wechat/test1/app.json",
+		"/C/Users/bingo/AppData/Roaming/Sublime Text 3/Packages/User/weapp-snippet/weappSnippet/navigator.sublime-snippet",
+		"/G/code/wechat/ch12/pages/index/index.wxml",
+		"/G/code/wechat/ch12/pages/play/play.json",
+		"/G/code/wechat/ch12/pages/search/search.js",
+		"/G/code/wechat/ch12/pages/play/play.js",
+		"/G/code/wechat/ch12/pages/list/list.js",
+		"/G/code/wechat/ch12/pages/search/search.wxss",
+		"/G/code/wechat/ch12/pages/search/search.wxml",
+		"/G/code/wechat/ch12/pages/play/play.wxss"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/G/code/Graduation Design/nodemcu/nodemcu_newarc/mqttSend.lua",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1314,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								387,
+								387
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": -1,
+							"bracket_highlighter.clone_locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										386,
+										387
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"region.yellowish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										379,
+										380
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.clone_regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										386,
+										387
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"region.yellowish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										379,
+										380
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"syntax": "Packages/Lua/Lua.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 56.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.astyle_error_message":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 159.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.hex_viewer_inspector":
+	{
+		"height": 127.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"output.stino_build_panel":
+	{
+		"height": 127.0
+	},
+	"output.stino_panel":
+	{
+		"height": 455.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 127.0
+	},
+	"pinned_build_system": "",
+	"project": "GB.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 154.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

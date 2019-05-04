@@ -21,7 +21,7 @@ end)
 tmr.start(wifiStateMonTimer)  
 
 function wifiConnect()  --wifi connect function while lost connect to ap
-    if (wifi.sta.getip()) then
+    if (wifi.sta.getip() == nil) then
         connect_state.wifi.state = 1    --wifi's state
         connect_state.wifi.numn = connect_state.wifi.numn + 1  --which wifi had been connect
     else

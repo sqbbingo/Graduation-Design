@@ -2,7 +2,38 @@ var config = require('../../config.js');        //导入配置文件
 Page({
     data:{
             light_state:'/images/light0.png',
+            wifi:{
+                    ssid:["wf","nodemcu"],
+                    pwd:["su666688886","12345678"]
+                },
     },
+
+    ssidInput: function (e) {
+    this.setData({
+      'wifi.ssid[0]': e.detail.value
+    })
+  },
+
+  pwdInput: function (e) {
+    this.setData({
+      'wifi.pwd[0]': e.detail.value
+    })
+  },
+
+    //确认按钮，更新灯的状态
+    button_ok(e) {
+            var self = this;
+            
+            config.config.PublishTheme("/room1/wifi",self.data.wifi);
+            console.log(self.data.wifi);
+            console.log(e);
+            wx.showToast({
+                    title: '重启后生效',
+                    icon: 'success',
+                    duration: 5000//持续的时间
+           })
+    },    
+
     onLoad:function(options){
         var self = this;
         //画折线图
@@ -77,17 +108,22 @@ Page({
                 success: function(res) {        //调用成功后的回调函数
                         console.log(res);
                         for (var i = res.data.data.length - 1; i >= 0; i--) {
-                               if (res.data.data[i].id == "light"){
-                                    if (res.data.data[i].current_value.satate == "1") {}
+                            if (res.data.data[i].id == "light") {
+                                if (res.data.data[i].current_value.satate == "1") {
                                     self.setData({
-                                            light_state:'/images/light0.png'
-                                    })
-                               }else{
-                                    if (res.data.data[i].current_value.satate == "1") {}
+                                        light_state:'/images/light0.png'
+                                    })                                        
+                                }else if (res.data.data[i].current_value.satate == "1") {
                                     self.setData({
-                                            light_state:'/images/light1.png'
+                                        light_state:'/images/light1.png'
+                                    })                                        
+                                }    
+                            }else if (res.data.data[i].id == "wifi") {
+                                    self.setData({
+                                        'wifi':res.data.data[i].current_value
+
                                     })
-                               }
+                            }
                         }  
                 }
         })

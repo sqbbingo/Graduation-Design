@@ -2,7 +2,7 @@
 bodyTimer = tmr.create()
 tmr.register(bodyTimer, 25000, tmr.ALARM_SEMI, function()
     tmr.stop(bodyTimer)
-    if(gpio.read(bodyPin) == 0) then
+    if(gpio.read(7) == 0) then
         print("no body")
         --res state after a little time
         if (message.led2.state == 1) then   --restore led2's state
@@ -18,9 +18,9 @@ tmr.register(bodyTimer, 25000, tmr.ALARM_SEMI, function()
 end)
 
 
-bodyPin = 7 
-gpio.mode(bodyPin, gpio.INT)
-gpio.trig(bodyPin, "up", function()
+-- bodyPin = 7 
+gpio.mode(7, gpio.INT)
+gpio.trig(7, "up", function()
     local running,mode = tmr.state(bodyTimer)
     if running then
         tmr.stop(bodyTimer)

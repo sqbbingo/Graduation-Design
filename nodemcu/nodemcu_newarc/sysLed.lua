@@ -1,27 +1,27 @@
 --sys led state
-sysLedPin = 5
+-- sysLedPin = 5
 sysLedState = 0
-pwm.setup(sysLedPin,1000,message.sysLed.brightness*10)
-pwm.start(sysLedPin)
+pwm.setup(5,1000,message.sysLed.brightness*10)
+pwm.start(5)
 --init sys led flashing begin time
 sysLedTimer = tmr.create()
 tmr.register(sysLedTimer, message.sysLed.time, tmr.ALARM_AUTO, function()
     sysLedState = not(sysLedState)
     if (sysLedState) then
-        pwm.start(sysLedPin)
+        pwm.start(5)
     else
-        pwm.stop(sysLedPin)
+        pwm.stop(5)
     end
 end)
 
 function sysLedStart()
     tmr.start(sysLedTimer)
-    pwm.start(sysLedPin)
+    pwm.start(5)
 end
 
 function sysLedStop()
     tmr.stop(sysLedTimer)
-    pwm.stop(sysLedPin)
+    pwm.stop(5)
 end
 
 function sysFlashingTime(time)

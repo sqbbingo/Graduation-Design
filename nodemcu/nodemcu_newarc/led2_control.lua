@@ -1,24 +1,25 @@
 --led2 control code
-led2_pin = 8
-pwm.setup(led2_pin,1000,message.led2.brightness)
-pwm.start(led2_pin)
+-- led2_pin = 8
+
+pwm.setup(8,100,message.led2.brightness)
+pwm.start(8)
 
 --The function of open led2 
 function led2_ON()
     print("led2_ON")
-    pwm.setduty(led2_pin,10*(message.led2.brightness+0)) 
+    pwm.setduty(8,10*(message.led2.brightness+0)) 
 end
 --The function of open led2 mandatory
 function led2_ONM(brightness)
     print("led2_ONM")
-    pwm.setduty(led2_pin,10*(brightness+0)) 
+    pwm.setduty(8,10*(brightness+0)) 
     brightness = nil
 end
 
 --The function of close led2
 function led2_OFF()
     print("led2_OFF")
-    pwm.setduty(led2_pin,10*(message.led2.brightness - message.led2.brightness + 0))
+    pwm.setduty(8,10*(message.led2.brightness - message.led2.brightness + 0))
 end
 
 --The function of perform the message receive

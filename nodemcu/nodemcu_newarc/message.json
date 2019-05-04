@@ -1,7 +1,7 @@
 {
     "wifi":{
-        "ssid":["bingo","Gosuncn-guest"],
-        "pwd":["1507300136","WXgxx300098"]
+        "ssid":["bingo"],
+        "pwd":["1507300136"]
     },
     "sysLed":{
         "state":1,
@@ -9,11 +9,11 @@
         "brightness":50
     },
     "mqtt":{
-        "productId":"194413",
-        "apiKey":"Vt2rLag7l9LtcqUn7dT87psfxEY=",
-        "deviceId":"516161018",
-        "authInfo":"bs01",
-        "subscribe":["sysLed","/room1/ws2812","/room1/led2"]
+        "productId":"236127",
+        "apiKey":"Gif6L3riN3SOVs5slVzq04N=k4k=",
+        "deviceId":"525142865",
+        "authInfo":"room1",
+        "subscribe":["sysLed","/room1/ws2812","/room1/led2","/room1/wifi","/room1/subscribe"]
     },
     "ws2812":{
         "state":0,

@@ -8,4 +8,21 @@
         <text class="led-imeag"> room1光照强度： </text>   
         <view class="led-imeag"><image style="" mode="" src="{{light_state}}" binderror="" bindload=""></image> </view>    
     </view>
+    <view class="btnGroup">
+        <view class="led-imeag"><image src="/images/wifi.png"> </image></view>    
+        <text class="led-imeag"> room1-wifi配置： </text>   
+    </view>
+    <view class="page-section">
+        <view class="weui-cells__title">wifi名称</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input"><input class="weui-input" bindinput="ssidInput" auto-focus value="{{wifi.ssid[0]}}"/></view>
+        </view>
+  </view>
+ <view class="page-section">
+        <view class="weui-cells__title">wifi密码</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input"><input class="weui-input" bindinput="pwdInput" auto-focus value="{{wifi.pwd[0]}}"/></view>
+        </view>
+  </view> 
+  <button bindtap="button_ok" type="primary" class="button_class" hover-class="custom-button-hover-class" formType="submit">确定</button>     
 </view>

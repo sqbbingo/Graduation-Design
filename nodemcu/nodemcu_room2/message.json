@@ -9,10 +9,10 @@
         "brightness":50
     },
     "mqtt":{
-        "productId":"194413",
-        "apiKey":"Vt2rLag7l9LtcqUn7dT87psfxEY=",
-        "deviceId":"510461991",
-        "authInfo":"nodemcu02",
+        "productId":"236127",
+        "apiKey":"Gif6L3riN3SOVs5slVzq04N=k4k=",
+        "deviceId":"525142882",
+        "authInfo":"room2",
         "subscribe":["sysLed","/room2/ws2812","/room2/led2"]
     },
     "ws2812":{

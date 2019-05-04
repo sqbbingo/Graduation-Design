@@ -2,7 +2,7 @@
 voiceTimer = tmr.create()
 tmr.register(voiceTimer, 25000, tmr.ALARM_SEMI, function()
     tmr.stop(voiceTimer)
-    if(gpio.read(voicePin) == 0) then
+    if(gpio.read(1) == 0) then
         print("no voice")
         --res state after a little time
         if (message.led2.state == 1) then   --restore led2's state
@@ -18,9 +18,9 @@ tmr.register(voiceTimer, 25000, tmr.ALARM_SEMI, function()
 end)
 
 
-voicePin = 1 
-gpio.mode(voicePin, gpio.INT)
-gpio.trig(voicePin, "up", function()
+-- voicePin = 1 
+gpio.mode(1, gpio.INT)
+gpio.trig(1, "up", function()
     local running,mode = tmr.state(voiceTimer)
     if running then
         tmr.stop(voiceTimer)

@@ -1,19 +1,19 @@
 (function (module){
         var exports = module.exports = {};
         //产品ID
-        var productid = 194413;
+        var productid = 236127;
         //产品密钥
-        var secret = "Vt2rLag7l9LtcqUn7dT87psfxEY=";
+        var secret = "Gif6L3riN3SOVs5slVzq04N=k4k=";
 //room1
         //设备ID
-        var deviceid = 516161018;
+        var deviceid = 525142865;
         //鉴权信息
-        var authinfo = "bs01";
+        var authinfo = "room1";
 //room2
         //设备ID
-        var deviceid2 = 510461991;
+        var deviceid2 = 525142882;
         //鉴权信息
-        var authinfo2 = "nodemcu02";
+        var authinfo2 = "room2";
 
 
         //根域名
@@ -37,7 +37,7 @@
         //请求的头部
         var header = {
                         'Content-Type': 'application/json',
-                        "api-key": "Vt2rLag7l9LtcqUn7dT87psfxEY=",
+                        "api-key": "Gif6L3riN3SOVs5slVzq04N=k4k=",
         }
 
         //向onenet发送publish数据

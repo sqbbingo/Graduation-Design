@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="G:\code\Graduation Design\GUI\build-grand_desig_http-Android_for_armeabi_v7a_GCC_4_9_Qt_5_6_1-Debug\android-build\libs\QtAndroidBearer-bundled.jar"
+        jumboMode="false"
+        revision="27.0.1"
+        sha1="69993b68df9f189342d5ffc00360c5bd3a72548c">
+        <dex dex="G:\code\Graduation Design\GUI\build-grand_desig_http-Android_for_armeabi_v7a_GCC_4_9_Qt_5_6_1-Debug\android-build\build\intermediates\pre-dexed\debug\QtAndroidBearer-bundled-e610cfa420ba493b636a5716b37670a6b5df45d2.jar" />
+    </item>
+    <item
+        jar="G:\code\Graduation Design\GUI\build-grand_desig_http-Android_for_armeabi_v7a_GCC_4_9_Qt_5_6_1-Debug\android-build\libs\QtAndroidAccessibility-bundled.jar"
+        jumboMode="false"
+        revision="27.0.1"
+        sha1="28f480037631de17a05c27d0fe0b58d21ccd4c2c">
+        <dex dex="G:\code\Graduation Design\GUI\build-grand_desig_http-Android_for_armeabi_v7a_GCC_4_9_Qt_5_6_1-Debug\android-build\build\intermediates\pre-dexed\debug\QtAndroidAccessibility-bundled-4cbd66505f5241a1dccce515d6d13ba873ed5582.jar" />
+    </item>
+    <item
+        jar="G:\code\Graduation Design\GUI\build-grand_desig_http-Android_for_armeabi_v7a_GCC_4_9_Qt_5_6_1-Debug\android-build\libs\QtAndroid-bundled.jar"
+        jumboMode="false"
+        revision="27.0.1"
+        sha1="a2e39d3ce63d007939c1f7bf6810c24bf2b32f0f">
+        <dex dex="G:\code\Graduation Design\GUI\build-grand_desig_http-Android_for_armeabi_v7a_GCC_4_9_Qt_5_6_1-Debug\android-build\build\intermediates\pre-dexed\debug\QtAndroid-bundled-0d2c6bed1c93be169a93e26461b765e68481ced8.jar" />
+    </item>
+
+</items>

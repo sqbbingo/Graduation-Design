@@ -1,10 +1,10 @@
 keyTimer = tmr.create()
-keyPin = 6
-gpio.mode(keyPin, gpio.INT, gpio.PULLUP)
+-- keyPin = 6
+gpio.mode(6, gpio.INT, gpio.PULLUP)
 function keyControl()
-    gpio.trig(keyPin)
+    gpio.trig(6)
     tmr.alarm(keyTimer, 500, tmr.ALARM_SINGLE, function()
-        gpio.trig(keyPin,"low", keyControl)
+        gpio.trig(6,"low", keyControl)
     end)
     print("int")
     if (message.led2.state == 1) then            --change led2's state
@@ -16,4 +16,4 @@ function keyControl()
     end
     upload_data()
 end
-gpio.trig(keyPin, "low", keyControl)
+gpio.trig(6, "low", keyControl)

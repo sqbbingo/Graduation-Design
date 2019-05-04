@@ -1,12 +1,12 @@
 --The code detection humi and tem every three minutes -used in inin.lua
 dhtTimer = tmr.create()
-dhtPin = 2
+-- dhtPin = 2
 dhtData = {}
 dhtData.num = 0
 dhtData.temp = 0
 dhtData.humi = 0
 tmr.register(dhtTimer, 1000, tmr.ALARM_AUTO, function()
-    local status, temp, humi, temp_dec, humi_dec = dht.read(dhtPin)
+    local status, temp, humi, temp_dec, humi_dec = dht.read(2)
     if status == dht.OK then
             -- message.dht = {}
             -- message.dht.tem = temp

@@ -40,6 +40,7 @@ else
 end
 
 --timing control function
+now_time = "00:00"
 timing_control_timer = tmr.create()
 tmr.register(timing_control_timer, 60*1000, tmr.ALARM_AUTO , function ()    
     now_time = string.format("%02d:%02d",sys_time_hour,sys_time_min)    --synthetic rtctime to compare
@@ -111,4 +112,4 @@ tmr.register(timing_control_timer, 60*1000, tmr.ALARM_AUTO , function ()
     led2TimingTimer()   --led2 timing  control form led2_control.lua
 end) 
 
-tmr.start(timing_control_timer)
+-- tmr.start(timing_control_timer)
